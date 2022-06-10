@@ -13,6 +13,7 @@
 		006796292851C85600B442F9 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006796282851C85600B442F9 /* HTTPMethod.swift */; };
 		0067962B2851C9B400B442F9 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0067962A2851C9B400B442F9 /* NetworkService.swift */; };
 		0067962E2851CBC600B442F9 /* StocksService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0067962D2851CBC600B442F9 /* StocksService.swift */; };
+		0067963C285236E500B442F9 /* Tabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0067963B285236E500B442F9 /* Tabbar.swift */; };
 		00A8E0962850B681007B0913 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A8E0952850B681007B0913 /* AppDelegate.swift */; };
 		00A8E09A2850B681007B0913 /* StocksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A8E0992850B681007B0913 /* StocksViewController.swift */; };
 		00A8E09F2850B683007B0913 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00A8E09E2850B683007B0913 /* Assets.xcassets */; };
@@ -26,6 +27,7 @@
 		006796282851C85600B442F9 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		0067962A2851C9B400B442F9 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		0067962D2851CBC600B442F9 /* StocksService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksService.swift; sourceTree = "<group>"; };
+		0067963B285236E500B442F9 /* Tabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabbar.swift; sourceTree = "<group>"; };
 		00A8E0922850B681007B0913 /* StocksApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StocksApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00A8E0952850B681007B0913 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00A8E0992850B681007B0913 /* StocksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksViewController.swift; sourceTree = "<group>"; };
@@ -56,7 +58,7 @@
 		0067961B2851C12200B442F9 /* StocksScreen */ = {
 			isa = PBXGroup;
 			children = (
-				006796432852FD6200B442F9 /* StocksListScreen */,
+				0067963628522BBE00B442F9 /* StocksListScreen */,
 			);
 			path = StocksScreen;
 			sourceTree = "<group>";
@@ -119,33 +121,7 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
-		006796402852FCE100B442F9 /* Application */ = {
-			isa = PBXGroup;
-			children = (
-				00A8E0952850B681007B0913 /* AppDelegate.swift */,
-				00A8E0A02850B683007B0913 /* LaunchScreen.storyboard */,
-				00A8E0A32850B683007B0913 /* Info.plist */,
-			);
-			path = Application;
-			sourceTree = "<group>";
-		};
-		006796412852FCFA00B442F9 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				00A8E09E2850B683007B0913 /* Assets.xcassets */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		006796422852FD2E00B442F9 /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				006796212851C1B300B442F9 /* Services */,
-			);
-			path = Core;
-			sourceTree = "<group>";
-		};
-		006796432852FD6200B442F9 /* StocksListScreen */ = {
+		0067963628522BBE00B442F9 /* StocksListScreen */ = {
 			isa = PBXGroup;
 			children = (
 				0067961C2851C13100B442F9 /* Model */,
@@ -154,6 +130,33 @@
 				0067961D2851C13700B442F9 /* View */,
 			);
 			path = StocksListScreen;
+			sourceTree = "<group>";
+		};
+		0067963D2852426A00B442F9 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				00A8E0A02850B683007B0913 /* LaunchScreen.storyboard */,
+				00A8E0952850B681007B0913 /* AppDelegate.swift */,
+				00A8E0A32850B683007B0913 /* Info.plist */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		0067963E285242B100B442F9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				00A8E09E2850B683007B0913 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		0067963F285242D400B442F9 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				006796212851C1B300B442F9 /* Services */,
+				0067963B285236E500B442F9 /* Tabbar.swift */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 		00A8E0892850B681007B0913 = {
@@ -175,9 +178,9 @@
 		00A8E0942850B681007B0913 /* StocksApp */ = {
 			isa = PBXGroup;
 			children = (
-				006796402852FCE100B442F9 /* Application */,
-				006796422852FD2E00B442F9 /* Core */,
-				006796412852FCFA00B442F9 /* Resources */,
+				0067963D2852426A00B442F9 /* Application */,
+				0067963F285242D400B442F9 /* Core */,
+				0067963E285242B100B442F9 /* Resources */,
 				0067961A2851C10000B442F9 /* Screens */,
 			);
 			path = StocksApp;
@@ -256,6 +259,7 @@
 				006796242851C62E00B442F9 /* Router.swift in Sources */,
 				00A8E09A2850B681007B0913 /* StocksViewController.swift in Sources */,
 				006796292851C85600B442F9 /* HTTPMethod.swift in Sources */,
+				0067963C285236E500B442F9 /* Tabbar.swift in Sources */,
 				00A8E0962850B681007B0913 /* AppDelegate.swift in Sources */,
 				006796192850C9E200B442F9 /* StockCell.swift in Sources */,
 				006796272851C82400B442F9 /* NetworkError.swift in Sources */,

@@ -36,7 +36,6 @@ final class StocksViewController: UIViewController {
     
     private func setupView() {
         view.backgroundColor = .white
-        title = "Stocks"
     }
     
     private func setupSubviews() {
