@@ -8,6 +8,7 @@
 import UIKit
 
 final class StockCell: UITableViewCell {
+    private var stock: Stock?
     
     private lazy var iconView: UIImageView = {
         let image = UIImageView()
@@ -15,13 +16,11 @@ final class StockCell: UITableViewCell {
         image.translatesAutoresizingMaskIntoConstraints = false
         image.layer.cornerRadius = 12
         image.clipsToBounds = true
-        image.image = UIImage(named: "YNDX")
         return image
     }()
     
     private lazy var symbolLabel: UILabel = {
         let label = UILabel()
-        label.text = "YNDX"
         label.font = .boldSystemFont(ofSize: 18)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -29,7 +28,6 @@ final class StockCell: UITableViewCell {
     
     private lazy var nameLabel: UILabel = {
         let label = UILabel()
-        label.text = "Yandex, LLC"
         label.font = .boldSystemFont(ofSize: 12)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -44,7 +42,6 @@ final class StockCell: UITableViewCell {
     
     private lazy var currentPriceLabel: UILabel = {
         let label = UILabel()
-        label.text = "4 764,6 ₽"
         label.font = .boldSystemFont(ofSize: 18)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -52,7 +49,6 @@ final class StockCell: UITableViewCell {
     
     private lazy var priceChangeLabel: UILabel = {
         let label = UILabel()
-        label.text = "+55 ₽ (1,15%)"
         label.font = .boldSystemFont(ofSize: 12)
         label.textColor = UIColor(red: 36/255, green: 178/255, blue: 93/255, alpha: 1)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -81,10 +77,24 @@ final class StockCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(with stock: Stock) {
+    public func configure(with stock: Stock) {
+        self.stock = stock
+        configureStockAttributes()
+    }
+    
+    private func configureStockAttributes() {
+        guard let stock = stock else { return }
+
+        iconView.load(url: stock.image)
         symbolLabel.text = stock.symbol
         nameLabel.text = stock.name
-        currentPriceLabel.text = "\(stock.currentPrice)"
+        currentPriceLabel.text = "$" + String(stock.currentPrice)
+        
+        if stock.priceChange > 0 {
+            priceChangeLabel.text = "+$" + String(format: "%.2f", stock.priceChange) + " (" + String(format: "%.2f", stock.priceChangePercentage) + ")%"
+        } else {
+            priceChangeLabel.text = "-$" + String(format: "%.2f", -stock.priceChange) + " (" + String(format: "%.2f", stock.priceChangePercentage) + ")%"
+        }
     }
     
     private func setup() {
@@ -154,5 +164,18 @@ final class StockCell: UITableViewCell {
         priceChangeLabel.topAnchor.constraint(equalTo: currentPriceLabel.bottomAnchor).isActive = true
         priceChangeLabel.trailingAnchor.constraint(equalTo: priceContainterView.trailingAnchor).isActive = true
         priceChangeLabel.bottomAnchor.constraint(equalTo: priceContainterView.bottomAnchor).isActive = true
+    }
+}
+
+extension UIImageView {
+    func load(url: URL) {
+        DispatchQueue.global().async { [weak self] in
+            if let data = try? Data(contentsOf: url),
+               let image = UIImage(data: data) {
+                DispatchQueue.main.async {
+                    self?.image = image
+                }
+            }
+        }
     }
 }

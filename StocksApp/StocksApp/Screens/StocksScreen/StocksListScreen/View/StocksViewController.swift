@@ -70,13 +70,14 @@ final class StocksViewController: UIViewController {
 final class MockStocksService: StocksServiceProtocol {
     func getStocks(currency: String, count: String, completion: @escaping (Result<[Stock], NetworkError>) -> Void) {
         let stocks = [
-            Stock(id: "", symbol: "", name: "", image: "", currentPrice: 0, priceChange: 0, priceChangePercentage: 0),
-            Stock(id: "", symbol: "", name: "", image: "", currentPrice: 0, priceChange: 0, priceChangePercentage: 0),
-            Stock(id: "", symbol: "", name: "", image: "", currentPrice: 0, priceChange: 0, priceChangePercentage: 0),Stock(id: "", symbol: "", name: "", image: "", currentPrice: 0, priceChange: 0, priceChangePercentage: 0),
-            Stock(id: "", symbol: "", name: "", image: "", currentPrice: 0, priceChange: 0, priceChangePercentage: 0),
-            Stock(id: "", symbol: "", name: "", image: "", currentPrice: 0, priceChange: 0, priceChangePercentage: 0),
-            Stock(id: "", symbol: "", name: "", image: "", currentPrice: 0, priceChange: 0, priceChangePercentage: 0),
-            Stock(id: "", symbol: "", name: "", image: "", currentPrice: 0, priceChange: 0, priceChangePercentage: 0)
+            Stock(id: "", symbol: "", name: "", image: URL(string: "")!, currentPrice: 0, priceChange: 0, priceChangePercentage: 0),
+            Stock(id: "", symbol: "", name: "", image: URL(string: "")!, currentPrice: 0, priceChange: 0, priceChangePercentage: 0),
+            Stock(id: "", symbol: "", name: "", image: URL(string: "")!, currentPrice: 0, priceChange: 0, priceChangePercentage: 0),
+            Stock(id: "", symbol: "", name: "", image: URL(string: "")!, currentPrice: 0, priceChange: 0, priceChangePercentage: 0),
+            Stock(id: "", symbol: "", name: "", image: URL(string: "")!, currentPrice: 0, priceChange: 0, priceChangePercentage: 0),
+            Stock(id: "", symbol: "", name: "", image: URL(string: "")!, currentPrice: 0, priceChange: 0, priceChangePercentage: 0),
+            Stock(id: "", symbol: "", name: "", image: URL(string: "")!, currentPrice: 0, priceChange: 0, priceChangePercentage: 0),
+            Stock(id: "", symbol: "", name: "", image: URL(string: "")!, currentPrice: 0, priceChange: 0, priceChangePercentage: 0)
         ]
         
         completion(.success(stocks))
@@ -108,7 +109,7 @@ struct Stock: Decodable {
     let id: String
     let symbol: String
     let name: String
-    let image: String
+    let image: URL
     let currentPrice: Double
     let priceChange: Double
     let priceChangePercentage: Double
