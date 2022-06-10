@@ -8,8 +8,6 @@
 import UIKit
 
 final class StockDetailView: UIView {
-    private var stock: Stock?
-    
     private lazy var currentPriceLabel: UILabel = {
         let label = UILabel()
         label.font = .boldSystemFont(ofSize: 28)
@@ -20,7 +18,6 @@ final class StockDetailView: UIView {
     private lazy var priceChangeLabel: UILabel = {
         let label = UILabel()
         label.font = .boldSystemFont(ofSize: 12)
-        label.textColor = UIColor(red: 36/255, green: 178/255, blue: 93/255, alpha: 1)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -34,6 +31,12 @@ final class StockDetailView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    public func configure(with model: StockModelProtocol) {
+        currentPriceLabel.text = model.currentPrice
+        priceChangeLabel.text = model.priceChange
+        priceChangeLabel.textColor = model.priceChangeColor
+    }
 
     private func setup() {
         setupViews()
@@ -46,28 +49,10 @@ final class StockDetailView: UIView {
     }
     
     private func setupContraints() {
-        
         currentPriceLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         currentPriceLabel.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 63).isActive = true
         
         priceChangeLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         priceChangeLabel.topAnchor.constraint(equalTo: currentPriceLabel.bottomAnchor, constant: 8).isActive = true
-    }
-    
-    public func configure(with stock: Stock) {
-        self.stock = stock
-        configureStockAttributes()
-    }
-    
-    private func configureStockAttributes() {
-        guard let stock = stock else { return }
-        
-        currentPriceLabel.text = "$" + String(stock.currentPrice)
-        
-        if stock.priceChange > 0 {
-            priceChangeLabel.text = "+$" + String(format: "%.2f", stock.priceChange) + " (" + String(format: "%.2f", stock.priceChangePercentage) + ")%"
-        } else {
-            priceChangeLabel.text = "-$" + String(format: "%.2f", -stock.priceChange) + " (" + String(format: "%.2f", stock.priceChangePercentage) + ")%"
-        }
     }
 }

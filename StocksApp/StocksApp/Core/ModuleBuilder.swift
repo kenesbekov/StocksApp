@@ -9,25 +9,25 @@ import Foundation
 import UIKit
 
 final class ModuleBuilder {
-    private init() {}
-    
     static let shared: ModuleBuilder = .init()
     
-    private lazy var network: NetworkService = {
-        Network()
-    }()
+    private init() {}
     
-    private func networkService() -> NetworkService {
-        network
-    }
-    
-    private func stocksService() -> StocksServiceProtocol {
-        StocksService(client: network)
-    }
+    private lazy var network: NetworkService = Network()
+    private lazy var stocksService: StocksServiceProtocol = StocksService(client: network)
+    private lazy var chartsService: ChartsServiceProtocol = ChartsService(client: network)
     
     private func stocksModule() -> UIViewController {
-        let presenter = StocksPresenter(service: stocksService())
+        let presenter = StocksPresenter(service: stocksService)
         let view = StocksViewController(presenter: presenter)
+        presenter.view = view
+        
+        return view
+    }
+    
+    public func detailModule(model: StockModelProtocol) -> UIViewController {
+        let presenter = StockDetailPresenter(model: model, service: chartsService)
+        let view = StockDetailViewController(presenter: presenter)
         presenter.view = view
         
         return view

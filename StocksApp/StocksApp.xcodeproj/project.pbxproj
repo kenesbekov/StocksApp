@@ -13,13 +13,16 @@
 		002224C8285312960058858E /* StocksRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002224C7285312960058858E /* StocksRouter.swift */; };
 		002224CA285313000058858E /* StockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002224C9285313000058858E /* StockModel.swift */; };
 		002224CD2853136A0058858E /* StockResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002224CC2853136A0058858E /* StockResponse.swift */; };
+		002224D328532F9A0058858E /* StockDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002224D228532F9A0058858E /* StockDetailPresenter.swift */; };
+		002224D528533ADE0058858E /* TitleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002224D428533ADE0058858E /* TitleModel.swift */; };
+		002224D928534ABA0058858E /* ChartsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002224D828534ABA0058858E /* ChartsService.swift */; };
 		006796192850C9E200B442F9 /* StockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006796182850C9E200B442F9 /* StockCell.swift */; };
 		006796242851C62E00B442F9 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006796232851C62E00B442F9 /* Router.swift */; };
 		006796272851C82400B442F9 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006796262851C82400B442F9 /* NetworkError.swift */; };
 		006796292851C85600B442F9 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006796282851C85600B442F9 /* HTTPMethod.swift */; };
 		0067962B2851C9B400B442F9 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0067962A2851C9B400B442F9 /* NetworkService.swift */; };
 		0067962E2851CBC600B442F9 /* StocksService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0067962D2851CBC600B442F9 /* StocksService.swift */; };
-		006796302852049A00B442F9 /* StockDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0067962F2852049A00B442F9 /* StockDetailsViewController.swift */; };
+		006796302852049A00B442F9 /* StockDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0067962F2852049A00B442F9 /* StockDetailViewController.swift */; };
 		006796322852056000B442F9 /* StockDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006796312852056000B442F9 /* StockDetailView.swift */; };
 		00679635285226F400B442F9 /* DetailTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00679634285226F400B442F9 /* DetailTitleView.swift */; };
 		0067963C285236E500B442F9 /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0067963B285236E500B442F9 /* ModuleBuilder.swift */; };
@@ -36,13 +39,16 @@
 		002224C7285312960058858E /* StocksRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksRouter.swift; sourceTree = "<group>"; };
 		002224C9285313000058858E /* StockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockModel.swift; sourceTree = "<group>"; };
 		002224CC2853136A0058858E /* StockResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockResponse.swift; sourceTree = "<group>"; };
+		002224D228532F9A0058858E /* StockDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDetailPresenter.swift; sourceTree = "<group>"; };
+		002224D428533ADE0058858E /* TitleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleModel.swift; sourceTree = "<group>"; };
+		002224D828534ABA0058858E /* ChartsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsService.swift; sourceTree = "<group>"; };
 		006796182850C9E200B442F9 /* StockCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockCell.swift; sourceTree = "<group>"; };
 		006796232851C62E00B442F9 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		006796262851C82400B442F9 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		006796282851C85600B442F9 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		0067962A2851C9B400B442F9 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		0067962D2851CBC600B442F9 /* StocksService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksService.swift; sourceTree = "<group>"; };
-		0067962F2852049A00B442F9 /* StockDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDetailsViewController.swift; sourceTree = "<group>"; };
+		0067962F2852049A00B442F9 /* StockDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDetailViewController.swift; sourceTree = "<group>"; };
 		006796312852056000B442F9 /* StockDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDetailView.swift; sourceTree = "<group>"; };
 		00679634285226F400B442F9 /* DetailTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTitleView.swift; sourceTree = "<group>"; };
 		0067963B285236E500B442F9 /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
@@ -180,7 +186,7 @@
 			children = (
 				00679634285226F400B442F9 /* DetailTitleView.swift */,
 				006796312852056000B442F9 /* StockDetailView.swift */,
-				0067962F2852049A00B442F9 /* StockDetailsViewController.swift */,
+				0067962F2852049A00B442F9 /* StockDetailViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -188,6 +194,7 @@
 		0067963828522C0100B442F9 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				002224D228532F9A0058858E /* StockDetailPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -195,6 +202,7 @@
 		0067963928522C0600B442F9 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				002224D828534ABA0058858E /* ChartsService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -202,6 +210,7 @@
 		0067963A28522C0B00B442F9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				002224D428533ADE0058858E /* TitleModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -333,6 +342,7 @@
 			files = (
 				006796242851C62E00B442F9 /* Router.swift in Sources */,
 				002224CD2853136A0058858E /* StockResponse.swift in Sources */,
+				002224D328532F9A0058858E /* StockDetailPresenter.swift in Sources */,
 				00A8E09A2850B681007B0913 /* StocksViewController.swift in Sources */,
 				006796292851C85600B442F9 /* HTTPMethod.swift in Sources */,
 				0067963C285236E500B442F9 /* ModuleBuilder.swift in Sources */,
@@ -340,12 +350,14 @@
 				002224C8285312960058858E /* StocksRouter.swift in Sources */,
 				00A8E0962850B681007B0913 /* AppDelegate.swift in Sources */,
 				002224C6285312220058858E /* UIImageView+Ext.swift in Sources */,
+				002224D528533ADE0058858E /* TitleModel.swift in Sources */,
 				002224CA285313000058858E /* StockModel.swift in Sources */,
+				002224D928534ABA0058858E /* ChartsService.swift in Sources */,
 				006796192850C9E200B442F9 /* StockCell.swift in Sources */,
 				00679635285226F400B442F9 /* DetailTitleView.swift in Sources */,
 				006796272851C82400B442F9 /* NetworkError.swift in Sources */,
 				006796322852056000B442F9 /* StockDetailView.swift in Sources */,
-				006796302852049A00B442F9 /* StockDetailsViewController.swift in Sources */,
+				006796302852049A00B442F9 /* StockDetailViewController.swift in Sources */,
 				002224C4285311FB0058858E /* NSObject+Ext.swift in Sources */,
 				0067962E2851CBC600B442F9 /* StocksService.swift in Sources */,
 				0067962B2851C9B400B442F9 /* NetworkService.swift in Sources */,

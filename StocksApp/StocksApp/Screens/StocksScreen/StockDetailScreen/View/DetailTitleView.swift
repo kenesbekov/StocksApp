@@ -8,8 +8,6 @@
 import UIKit
 
 final class DetailTitleView: UIView {
-    private var stock: Stock?
-
     private lazy var symbolLabel: UILabel = {
         let label = UILabel()
         label.font = .boldSystemFont(ofSize: 18)
@@ -34,16 +32,9 @@ final class DetailTitleView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(with stock: Stock) {
-        self.stock = stock
-        configureStockAttributes()
-    }
-    
-    func configureStockAttributes() {
-        guard let stock = stock else { return }
-        
-        symbolLabel.text = stock.symbol
-        nameLabel.text = stock.name
+    func configure(with model: TitleModel) {
+        symbolLabel.text = model.symbol
+        nameLabel.text = model.name
     }
 
     private func setup() {

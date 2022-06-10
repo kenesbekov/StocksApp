@@ -1,5 +1,5 @@
 //
-//  StockDetailsViewController.swift
+//  StockDetailViewController.swift
 //  StocksApp
 //
 //  Created by Abdurahim on 09.06.2022.
@@ -7,16 +7,26 @@
 
 import UIKit
 
-final class StockDetailsViewController: UIViewController {
-    private var stock: Stock?
+final class StockDetailViewController: UIViewController {
+    private let presenter: StockDetailPresenterProtocol
+    
+    init(presenter: StockDetailPresenterProtocol) {
+        self.presenter = presenter
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     private lazy var titleView: UIView = {
         let view = DetailTitleView()
-        view.configure(with: stock!)
+        view.configure(with: presenter.titleModel)
         return view
     }()
     
-    public let stockDetailView = StockDetailView(frame: CGRect(
+    private lazy var stockDetailView = StockDetailView(frame: CGRect(
         x: 0,
         y: 0,
         width: UIScreen.main.bounds.width,
@@ -44,15 +54,13 @@ final class StockDetailsViewController: UIViewController {
         setup()
     }
     
-    public func configure(with stock: Stock) {
-        self.stock = stock
-    }
-    
     private func setup() {
         setupView()
         setupViews()
         setupContraints()
         setupNavigationBar()
+        
+        presenter.loadView()
     }
     
     private func setupNavigationBar() {
@@ -66,7 +74,7 @@ final class StockDetailsViewController: UIViewController {
     }
     
     private func setupViews() {
-        stockDetailView.configure(with: stock!)
+        stockDetailView.configure(with: presenter.getModel())
         view.addSubview(stockDetailView)
     }
     
@@ -81,4 +89,19 @@ final class StockDetailsViewController: UIViewController {
     private func backBattonTapped() {
         navigationController?.popViewController(animated: true)
     }
+}
+
+extension StockDetailViewController: StockDetailViewProtocol {
+    func updateView() {
+        
+    }
+    
+    func updateView(withLoader isLoading: Bool) {
+        print("Loader is - ", isLoading, " at ", Date())
+    }
+    
+    func updateView(withError message: String) {
+        print("Error - ", message)
+    }
+    
 }

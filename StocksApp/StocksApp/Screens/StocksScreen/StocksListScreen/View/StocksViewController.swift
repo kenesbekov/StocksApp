@@ -124,9 +124,7 @@ extension StocksViewController: UITableViewDataSource {
 
 extension StocksViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let stockDetailVC = StockDetailsViewController()
-        let cell = tableView.cellForRow(at: indexPath) as! StockCell
-//        stockDetailVC.configure(with: cell.configureToStock())
+        let stockDetailVC = ModuleBuilder.shared.detailModule(model: presenter.model(for: indexPath))
         navigationController?.pushViewController(stockDetailVC, animated: true)
     }
 }
