@@ -16,6 +16,8 @@
 		002224D328532F9A0058858E /* StockDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002224D228532F9A0058858E /* StockDetailPresenter.swift */; };
 		002224D528533ADE0058858E /* TitleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002224D428533ADE0058858E /* TitleModel.swift */; };
 		002224D928534ABA0058858E /* ChartsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002224D828534ABA0058858E /* ChartsService.swift */; };
+		002224DB2853671E0058858E /* ChartsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002224DA2853671E0058858E /* ChartsView.swift */; };
+		002224DD2853691E0058858E /* ChartsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002224DC2853691E0058858E /* ChartsResponse.swift */; };
 		006796192850C9E200B442F9 /* StockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006796182850C9E200B442F9 /* StockCell.swift */; };
 		006796242851C62E00B442F9 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006796232851C62E00B442F9 /* Router.swift */; };
 		006796272851C82400B442F9 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006796262851C82400B442F9 /* NetworkError.swift */; };
@@ -42,6 +44,8 @@
 		002224D228532F9A0058858E /* StockDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDetailPresenter.swift; sourceTree = "<group>"; };
 		002224D428533ADE0058858E /* TitleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleModel.swift; sourceTree = "<group>"; };
 		002224D828534ABA0058858E /* ChartsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsService.swift; sourceTree = "<group>"; };
+		002224DA2853671E0058858E /* ChartsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsView.swift; sourceTree = "<group>"; };
+		002224DC2853691E0058858E /* ChartsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsResponse.swift; sourceTree = "<group>"; };
 		006796182850C9E200B442F9 /* StockCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockCell.swift; sourceTree = "<group>"; };
 		006796232851C62E00B442F9 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		006796262851C82400B442F9 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
@@ -184,6 +188,7 @@
 		0067963728522BFB00B442F9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				002224DA2853671E0058858E /* ChartsView.swift */,
 				00679634285226F400B442F9 /* DetailTitleView.swift */,
 				006796312852056000B442F9 /* StockDetailView.swift */,
 				0067962F2852049A00B442F9 /* StockDetailViewController.swift */,
@@ -202,6 +207,7 @@
 		0067963928522C0600B442F9 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				002224DC2853691E0058858E /* ChartsResponse.swift */,
 				002224D828534ABA0058858E /* ChartsService.swift */,
 			);
 			path = Service;
@@ -361,6 +367,8 @@
 				002224C4285311FB0058858E /* NSObject+Ext.swift in Sources */,
 				0067962E2851CBC600B442F9 /* StocksService.swift in Sources */,
 				0067962B2851C9B400B442F9 /* NetworkService.swift in Sources */,
+				002224DD2853691E0058858E /* ChartsResponse.swift in Sources */,
+				002224DB2853671E0058858E /* ChartsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
