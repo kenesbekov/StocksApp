@@ -13,6 +13,8 @@ final class StocksViewController: UIViewController {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.separatorStyle = .none
+        tableView.showsVerticalScrollIndicator = false
+        tableView.dataSource = self
         tableView.register(StockCell.self, forCellReuseIdentifier: StockCell.typeName)
         
         return tableView
@@ -21,9 +23,16 @@ final class StocksViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setup()
+    }
+    
+    private func setup() {
+        setupView()
         setupSubviews()
+    }
+    
+    private func setupView() {
         view.backgroundColor = .white
-        tableView.dataSource = self
     }
     
     private func setupSubviews() {
@@ -43,7 +52,7 @@ extension StocksViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+        return 10
     }
 }
 
