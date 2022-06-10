@@ -8,8 +8,17 @@
 import UIKit
 
 final class StocksViewController: UIViewController {
+    private let presenter: StocksPresenterProtocol
     
-    private var stocks: [Stock] = []
+    internal init(presenter: StocksPresenterProtocol) {
+        self.presenter = presenter
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -27,13 +36,14 @@ final class StocksViewController: UIViewController {
         super.viewDidLoad()
         
         setup()
-        getStocks()
     }
     
     private func setup() {
         setupView()
         setupSubviews()
         setupNavigationBar()
+        
+        presenter.loadView()
     }
     
     private func setupView() {
@@ -52,22 +62,6 @@ final class StocksViewController: UIViewController {
         tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
         tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-    }
-    
-    private func getStocks() {
-        let client = Network()
-        let service: StocksServiceProtocol = StocksService(client: client)
-//        let service: StocksServiceProtocol = MockStocksService()
-        
-        service.getStocks { [weak self] result in
-            switch result {
-            case .success(let stocks):
-                self?.stocks = stocks
-                self?.tableView.reloadData()
-            case .failure(let error):
-                self?.showError(error.localizedDescription)
-            }
-        }
     }
     
     private func showError(_ message: String) {
@@ -92,12 +86,26 @@ final class MockStocksService: StocksServiceProtocol {
     }
 }
 
+extension StocksViewController: StocksViewProtocol {
+    func updateView() {
+        tableView.reloadData()
+    }
+    
+    func updateView(withLoader isLoading: Bool) {
+        print("Loader is - ", isLoading, " at ", Date())
+    }
+    
+    func updateView(withError message: String) {
+        print("Error - ", message)
+    }
+}
+
 extension StocksViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: StockCell.typeName, for: indexPath) as! StockCell
         cell.selectionStyle = .none
         
-        cell.configure(with: stocks[indexPath.row])
+        cell.configure(with: presenter.model(for: indexPath))
             
         if indexPath.row % 2 == 0 {
             cell.layer.cornerRadius = 16
@@ -110,7 +118,7 @@ extension StocksViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return stocks.count
+        presenter.itemsCount
     }
 }
 
@@ -118,30 +126,7 @@ extension StocksViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let stockDetailVC = StockDetailsViewController()
         let cell = tableView.cellForRow(at: indexPath) as! StockCell
-        stockDetailVC.configure(with: cell.configureToStock())
+//        stockDetailVC.configure(with: cell.configureToStock())
         navigationController?.pushViewController(stockDetailVC, animated: true)
-    }
-}
-
-struct Stock: Decodable {
-    let id: String
-    let symbol: String
-    let name: String
-    let image: URL
-    let currentPrice: Double
-    let priceChange: Double
-    let priceChangePercentage: Double
-    
-    enum CodingKeys: String, CodingKey {
-        case id, symbol, name, image
-        case currentPrice = "current_price"
-        case priceChange = "price_change_24h"
-        case priceChangePercentage = "price_change_percentage_24h"
-    }
-}
-
-extension NSObject {
-    static var typeName: String {
-        String(describing: self)
     }
 }

@@ -8,8 +8,6 @@
 import UIKit
 
 final class StockCell: UITableViewCell {
-    private var stock: Stock?
-    
     private lazy var iconView: UIImageView = {
         let image = UIImageView()
         image.contentMode = .scaleAspectFit
@@ -50,7 +48,6 @@ final class StockCell: UITableViewCell {
     private lazy var priceChangeLabel: UILabel = {
         let label = UILabel()
         label.font = .boldSystemFont(ofSize: 12)
-        label.textColor = UIColor(red: 36/255, green: 178/255, blue: 93/255, alpha: 1)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -77,28 +74,13 @@ final class StockCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public func configureToStock() -> Stock {
-        return stock!
-    }
-    
-    public func configure(with stock: Stock) {
-        self.stock = stock
-        configureStockAttributes()
-    }
-    
-    private func configureStockAttributes() {
-        guard let stock = stock else { return }
-
-        iconView.load(url: stock.image)
-        symbolLabel.text = stock.symbol
-        nameLabel.text = stock.name
-        currentPriceLabel.text = "$" + String(stock.currentPrice)
-        
-        if stock.priceChange > 0 {
-            priceChangeLabel.text = "+$" + String(format: "%.2f", stock.priceChange) + " (" + String(format: "%.2f", stock.priceChangePercentage) + ")%"
-        } else {
-            priceChangeLabel.text = "-$" + String(format: "%.2f", -stock.priceChange) + " (" + String(format: "%.2f", stock.priceChangePercentage) + ")%"
-        }
+    public func configure(with model: StockModelProtocol) {
+        iconView.load(url: model.image)
+        symbolLabel.text = model.symbol
+        nameLabel.text = model.name
+        currentPriceLabel.text = model.currentPrice
+        priceChangeLabel.text = model.priceChange
+        priceChangeLabel.textColor = model.priceChangeColor
     }
     
     private func setup() {
@@ -149,7 +131,7 @@ final class StockCell: UITableViewCell {
         nameLabel.bottomAnchor.constraint(equalTo: infoContainterView.bottomAnchor).isActive = true
         
         favoriteButton.leadingAnchor.constraint(equalTo: symbolLabel.trailingAnchor, constant: 6).isActive = true
-        favoriteButton.trailingAnchor.constraint(equalTo: infoContainterView.trailingAnchor).isActive = true
+        favoriteButton.trailingAnchor.constraint(lessThanOrEqualTo: infoContainterView.trailingAnchor).isActive = true
         favoriteButton.centerYAnchor.constraint(equalTo: symbolLabel.centerYAnchor).isActive = true
         favoriteButton.heightAnchor.constraint(equalToConstant: 16).isActive = true
         favoriteButton.widthAnchor.constraint(equalToConstant: 16).isActive = true
@@ -168,18 +150,5 @@ final class StockCell: UITableViewCell {
         priceChangeLabel.topAnchor.constraint(equalTo: currentPriceLabel.bottomAnchor).isActive = true
         priceChangeLabel.trailingAnchor.constraint(equalTo: priceContainterView.trailingAnchor).isActive = true
         priceChangeLabel.bottomAnchor.constraint(equalTo: priceContainterView.bottomAnchor).isActive = true
-    }
-}
-
-extension UIImageView {
-    func load(url: URL) {
-        DispatchQueue.global().async { [weak self] in
-            if let data = try? Data(contentsOf: url),
-               let image = UIImage(data: data) {
-                DispatchQueue.main.async {
-                    self?.image = image
-                }
-            }
-        }
     }
 }
