@@ -81,6 +81,12 @@ final class StockCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func configure(with stock: Stock) {
+        symbolLabel.text = stock.symbol
+        nameLabel.text = stock.name
+        currentPriceLabel.text = "\(stock.currentPrice)"
+    }
+    
     private func setup() {
         setupContentView()
         setupContentViewConstraints()
