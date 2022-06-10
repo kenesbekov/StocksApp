@@ -45,6 +45,117 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0067961A2851C10000B442F9 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				0067961B2851C12200B442F9 /* StocksScreen */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		0067961B2851C12200B442F9 /* StocksScreen */ = {
+			isa = PBXGroup;
+			children = (
+				006796432852FD6200B442F9 /* StocksListScreen */,
+			);
+			path = StocksScreen;
+			sourceTree = "<group>";
+		};
+		0067961C2851C13100B442F9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0067961D2851C13700B442F9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				00A8E0992850B681007B0913 /* StocksViewController.swift */,
+				0067961F2851C16200B442F9 /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0067961E2851C13C00B442F9 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		0067961F2851C16200B442F9 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				006796182850C9E200B442F9 /* StockCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		006796212851C1B300B442F9 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				006796222851C1BA00B442F9 /* NetworkService */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		006796222851C1BA00B442F9 /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				006796282851C85600B442F9 /* HTTPMethod.swift */,
+				006796262851C82400B442F9 /* NetworkError.swift */,
+				0067962A2851C9B400B442F9 /* NetworkService.swift */,
+				006796232851C62E00B442F9 /* Router.swift */,
+			);
+			path = NetworkService;
+			sourceTree = "<group>";
+		};
+		0067962C2851CBAC00B442F9 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				0067962D2851CBC600B442F9 /* StocksService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		006796402852FCE100B442F9 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				00A8E0952850B681007B0913 /* AppDelegate.swift */,
+				00A8E0A02850B683007B0913 /* LaunchScreen.storyboard */,
+				00A8E0A32850B683007B0913 /* Info.plist */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		006796412852FCFA00B442F9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				00A8E09E2850B683007B0913 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		006796422852FD2E00B442F9 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				006796212851C1B300B442F9 /* Services */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		006796432852FD6200B442F9 /* StocksListScreen */ = {
+			isa = PBXGroup;
+			children = (
+				0067961C2851C13100B442F9 /* Model */,
+				0067961E2851C13C00B442F9 /* Presenter */,
+				0067962C2851CBAC00B442F9 /* Service */,
+				0067961D2851C13700B442F9 /* View */,
+			);
+			path = StocksListScreen;
+			sourceTree = "<group>";
+		};
 		00A8E0892850B681007B0913 = {
 			isa = PBXGroup;
 			children = (
@@ -64,17 +175,10 @@
 		00A8E0942850B681007B0913 /* StocksApp */ = {
 			isa = PBXGroup;
 			children = (
-				00A8E0952850B681007B0913 /* AppDelegate.swift */,
-				006796182850C9E200B442F9 /* StockCell.swift */,
-				0067962D2851CBC600B442F9 /* StocksService.swift */,
-				006796232851C62E00B442F9 /* Router.swift */,
-				006796262851C82400B442F9 /* NetworkError.swift */,
-				006796282851C85600B442F9 /* HTTPMethod.swift */,
-				0067962A2851C9B400B442F9 /* NetworkService.swift */,
-				00A8E0992850B681007B0913 /* StocksViewController.swift */,
-				00A8E09E2850B683007B0913 /* Assets.xcassets */,
-				00A8E0A02850B683007B0913 /* LaunchScreen.storyboard */,
-				00A8E0A32850B683007B0913 /* Info.plist */,
+				006796402852FCE100B442F9 /* Application */,
+				006796422852FD2E00B442F9 /* Core */,
+				006796412852FCFA00B442F9 /* Resources */,
+				0067961A2851C10000B442F9 /* Screens */,
 			);
 			path = StocksApp;
 			sourceTree = "<group>";
@@ -297,7 +401,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7ZQ39JPT94;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = StocksApp/Info.plist;
+				INFOPLIST_FILE = StocksApp/Application/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -324,7 +428,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7ZQ39JPT94;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = StocksApp/Info.plist;
+				INFOPLIST_FILE = StocksApp/Application/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
