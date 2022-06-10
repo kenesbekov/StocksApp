@@ -77,6 +77,10 @@ final class StockCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    public func configureToStock() -> Stock {
+        return stock!
+    }
+    
     public func configure(with stock: Stock) {
         self.stock = stock
         configureStockAttributes()

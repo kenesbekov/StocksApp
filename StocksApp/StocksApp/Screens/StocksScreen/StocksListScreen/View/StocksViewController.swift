@@ -16,6 +16,7 @@ final class StocksViewController: UIViewController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.separatorStyle = .none
         tableView.showsVerticalScrollIndicator = false
+        tableView.delegate = self
         tableView.dataSource = self
         tableView.register(StockCell.self, forCellReuseIdentifier: StockCell.typeName)
         
@@ -32,10 +33,17 @@ final class StocksViewController: UIViewController {
     private func setup() {
         setupView()
         setupSubviews()
+        setupNavigationBar()
     }
     
     private func setupView() {
         view.backgroundColor = .white
+    }
+    
+    private func setupNavigationBar() {
+        navigationItem.title = "Stocks"
+        navigationItem.largeTitleDisplayMode = .always
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     private func setupSubviews() {
@@ -87,6 +95,7 @@ final class MockStocksService: StocksServiceProtocol {
 extension StocksViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: StockCell.typeName, for: indexPath) as! StockCell
+        cell.selectionStyle = .none
         
         cell.configure(with: stocks[indexPath.row])
             
@@ -102,6 +111,15 @@ extension StocksViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return stocks.count
+    }
+}
+
+extension StocksViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let stockDetailVC = StockDetailsViewController()
+        let cell = tableView.cellForRow(at: indexPath) as! StockCell
+        stockDetailVC.configure(with: cell.configureToStock())
+        navigationController?.pushViewController(stockDetailVC, animated: true)
     }
 }
 
