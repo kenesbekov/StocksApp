@@ -47,6 +47,14 @@ final class StocksViewController: UIViewController {
 extension StocksViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: StockCell.typeName, for: indexPath) as! StockCell
+            
+        if indexPath.row % 2 == 0 {
+            cell.layer.cornerRadius = 16
+            cell.backgroundColor = UIColor(red: 240/255, green: 244/255, blue: 247/255, alpha: 1)
+        } else {
+            cell.backgroundColor = .clear
+        }
+        
         
         return cell
     }
