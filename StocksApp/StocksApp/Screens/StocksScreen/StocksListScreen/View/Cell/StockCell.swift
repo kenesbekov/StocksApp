@@ -8,6 +8,7 @@
 import UIKit
 
 final class StockCell: UITableViewCell {
+    private var favoriteAction: (() -> Void)?
     private lazy var iconView: UIImageView = {
         let image = UIImageView()
         image.contentMode = .scaleAspectFit
@@ -34,7 +35,9 @@ final class StockCell: UITableViewCell {
     private lazy var favoriteButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "favorite-off"), for: .normal)
+        button.setImage(UIImage(named: "favorite-on"), for: .selected)
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(favoriteButtonTapped), for: .touchUpInside)
         return button
     }()
     
@@ -63,6 +66,12 @@ final class StockCell: UITableViewCell {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        favoriteAction = nil
+    }
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -81,6 +90,16 @@ final class StockCell: UITableViewCell {
         currentPriceLabel.text = model.currentPrice
         priceChangeLabel.text = model.priceChange
         priceChangeLabel.textColor = model.priceChangeColor
+        favoriteButton.isSelected = model.isFavorite
+        favoriteAction = {
+            model.setFavorite()
+        }
+    }
+    
+    @objc
+    private func favoriteButtonTapped(_ sender: UIButton!) {
+        sender.isSelected.toggle()
+        favoriteAction?()
     }
     
     private func setup() {

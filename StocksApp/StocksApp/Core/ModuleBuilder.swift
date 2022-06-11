@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 final class ModuleBuilder {
+    let favoritesService: FavoritesServiceProtocol = FavoritesLocalService()
     static let shared: ModuleBuilder = .init()
     
     private init() {}

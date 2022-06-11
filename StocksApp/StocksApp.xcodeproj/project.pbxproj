@@ -32,6 +32,9 @@
 		00A8E09A2850B681007B0913 /* StocksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A8E0992850B681007B0913 /* StocksViewController.swift */; };
 		00A8E09F2850B683007B0913 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00A8E09E2850B683007B0913 /* Assets.xcassets */; };
 		00A8E0A22850B683007B0913 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00A8E0A02850B683007B0913 /* LaunchScreen.storyboard */; };
+		00D1FCC72854624C0054B61C /* FavoritesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D1FCC62854624C0054B61C /* FavoritesService.swift */; };
+		00D1FCC928546B6E0054B61C /* UserDefaultsFavoritesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D1FCC828546B6E0054B61C /* UserDefaultsFavoritesService.swift */; };
+		00D1FCCB28546B7F0054B61C /* FileManagerFavoritesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D1FCCA28546B7F0054B61C /* FileManagerFavoritesService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +65,9 @@
 		00A8E09E2850B683007B0913 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		00A8E0A12850B683007B0913 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		00A8E0A32850B683007B0913 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00D1FCC62854624C0054B61C /* FavoritesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesService.swift; sourceTree = "<group>"; };
+		00D1FCC828546B6E0054B61C /* UserDefaultsFavoritesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsFavoritesService.swift; sourceTree = "<group>"; };
+		00D1FCCA28546B7F0054B61C /* FileManagerFavoritesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerFavoritesService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +143,7 @@
 		006796212851C1B300B442F9 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				00D1FCC5285462340054B61C /* FavoritesService */,
 				006796222851C1BA00B442F9 /* NetworkService */,
 			);
 			path = Services;
@@ -276,6 +283,16 @@
 			path = StocksApp;
 			sourceTree = "<group>";
 		};
+		00D1FCC5285462340054B61C /* FavoritesService */ = {
+			isa = PBXGroup;
+			children = (
+				00D1FCC62854624C0054B61C /* FavoritesService.swift */,
+				00D1FCCA28546B7F0054B61C /* FileManagerFavoritesService.swift */,
+				00D1FCC828546B6E0054B61C /* UserDefaultsFavoritesService.swift */,
+			);
+			path = FavoritesService;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -351,9 +368,11 @@
 				002224D328532F9A0058858E /* StockDetailPresenter.swift in Sources */,
 				00A8E09A2850B681007B0913 /* StocksViewController.swift in Sources */,
 				006796292851C85600B442F9 /* HTTPMethod.swift in Sources */,
+				00D1FCC928546B6E0054B61C /* UserDefaultsFavoritesService.swift in Sources */,
 				0067963C285236E500B442F9 /* ModuleBuilder.swift in Sources */,
 				002224C128530A3C0058858E /* StocksPresenter.swift in Sources */,
 				002224C8285312960058858E /* StocksRouter.swift in Sources */,
+				00D1FCCB28546B7F0054B61C /* FileManagerFavoritesService.swift in Sources */,
 				00A8E0962850B681007B0913 /* AppDelegate.swift in Sources */,
 				002224C6285312220058858E /* UIImageView+Ext.swift in Sources */,
 				002224D528533ADE0058858E /* TitleModel.swift in Sources */,
@@ -367,6 +386,7 @@
 				002224C4285311FB0058858E /* NSObject+Ext.swift in Sources */,
 				0067962E2851CBC600B442F9 /* StocksService.swift in Sources */,
 				0067962B2851C9B400B442F9 /* NetworkService.swift in Sources */,
+				00D1FCC72854624C0054B61C /* FavoritesService.swift in Sources */,
 				002224DD2853691E0058858E /* ChartsResponse.swift in Sources */,
 				002224DB2853671E0058858E /* ChartsView.swift in Sources */,
 			);
