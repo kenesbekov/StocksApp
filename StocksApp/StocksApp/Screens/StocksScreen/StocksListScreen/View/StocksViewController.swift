@@ -91,6 +91,10 @@ extension StocksViewController: StocksViewProtocol {
         tableView.reloadData()
     }
     
+    func updateCell(for indexPath: IndexPath) {
+        tableView.reloadRows(at: [indexPath], with: .none)
+    }
+    
     func updateView(withLoader isLoading: Bool) {
         print("Loader is - ", isLoading, " at ", Date())
     }

@@ -35,6 +35,7 @@
 		00D1FCC72854624C0054B61C /* FavoritesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D1FCC62854624C0054B61C /* FavoritesService.swift */; };
 		00D1FCC928546B6E0054B61C /* UserDefaultsFavoritesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D1FCC828546B6E0054B61C /* UserDefaultsFavoritesService.swift */; };
 		00D1FCCB28546B7F0054B61C /* FileManagerFavoritesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D1FCCA28546B7F0054B61C /* FileManagerFavoritesService.swift */; };
+		00D1FCCD28547CD20054B61C /* FavoritesUpdateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D1FCCC28547CD20054B61C /* FavoritesUpdateService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		00D1FCC62854624C0054B61C /* FavoritesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesService.swift; sourceTree = "<group>"; };
 		00D1FCC828546B6E0054B61C /* UserDefaultsFavoritesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsFavoritesService.swift; sourceTree = "<group>"; };
 		00D1FCCA28546B7F0054B61C /* FileManagerFavoritesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerFavoritesService.swift; sourceTree = "<group>"; };
+		00D1FCCC28547CD20054B61C /* FavoritesUpdateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesUpdateService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -289,6 +291,7 @@
 				00D1FCC62854624C0054B61C /* FavoritesService.swift */,
 				00D1FCCA28546B7F0054B61C /* FileManagerFavoritesService.swift */,
 				00D1FCC828546B6E0054B61C /* UserDefaultsFavoritesService.swift */,
+				00D1FCCC28547CD20054B61C /* FavoritesUpdateService.swift */,
 			);
 			path = FavoritesService;
 			sourceTree = "<group>";
@@ -375,6 +378,7 @@
 				00D1FCCB28546B7F0054B61C /* FileManagerFavoritesService.swift in Sources */,
 				00A8E0962850B681007B0913 /* AppDelegate.swift in Sources */,
 				002224C6285312220058858E /* UIImageView+Ext.swift in Sources */,
+				00D1FCCD28547CD20054B61C /* FavoritesUpdateService.swift in Sources */,
 				002224D528533ADE0058858E /* TitleModel.swift in Sources */,
 				002224CA285313000058858E /* StockModel.swift in Sources */,
 				002224D928534ABA0058858E /* ChartsService.swift in Sources */,

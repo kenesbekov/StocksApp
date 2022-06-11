@@ -44,7 +44,10 @@ final class StockDetailViewController: UIViewController {
     private lazy var favoriteButton: UIButton = {
         let button = UIButton(type: .custom)
         button.setImage(UIImage(named: "fav-detail"), for: .normal)
+        button.setImage(UIImage(named: "favorite-on"), for: .selected)
         button.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
+        button.isSelected = self.presenter.getModel().isFavorite
+        button.addTarget(self, action: #selector(favoriteButtonTapped), for: .touchUpInside)
         return button
     }()
 
@@ -52,6 +55,17 @@ final class StockDetailViewController: UIViewController {
         super.viewDidLoad()
         
         setup()
+    }
+    
+    @objc
+    private func backBattonTapped() {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    @objc
+    private func favoriteButtonTapped(_ sender: UIButton!) {
+        sender.isSelected.toggle()
+        presenter.getModel().setFavorite()
     }
     
     private func setup() {
@@ -83,11 +97,6 @@ final class StockDetailViewController: UIViewController {
         stockDetailView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         stockDetailView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         stockDetailView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-    }
-    
-    @objc
-    private func backBattonTapped() {
-        navigationController?.popViewController(animated: true)
     }
 }
 

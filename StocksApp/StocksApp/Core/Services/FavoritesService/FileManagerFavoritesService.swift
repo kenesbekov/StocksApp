@@ -25,26 +25,34 @@ final class FavoritesLocalService: FavoritesServiceProtocol {
     
     func save(id: String) {
         favoriteIDs.append(id)
-        updateRepo()
+        updateRepo(with: id)
     }
     
     func remove(id: String) {
         if let index = favoriteIDs.firstIndex(where: { $0 == id }) {
             favoriteIDs.remove(at: index)
         }
-        updateRepo()
+        updateRepo(with: id)
     }
     
     func isFavorite(for id: String) -> Bool {
         favoriteIDs.contains(id)
     }
     
-    private func updateRepo() {
+    private func updateRepo(with id: String) {
         do {
             let data = try JSONEncoder().encode(favoriteIDs)
             try data.write(to: path)
+            post(id: id)
         } catch {
             print("FileManager WriteError - ", error.localizedDescription)
         }
+    }
+    
+    private func post(id: String) {
+        NotificationCenter.default.post(name: NSNotification.Name.favorites,
+                                        object: nil,
+                                        userInfo: ["id": id]
+        )
     }
 }
