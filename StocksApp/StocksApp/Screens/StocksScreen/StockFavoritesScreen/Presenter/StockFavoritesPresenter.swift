@@ -32,6 +32,7 @@ final class StockFavoritesPresenter: StockFavoritesPresenterProtocol {
     
     init(service: StocksServiceProtocol) {
         self.service = service
+        startObservingFavoriteNotifications()
     }
     
     weak var view: StockFavoritesViewProtocol?
@@ -54,5 +55,11 @@ final class StockFavoritesPresenter: StockFavoritesPresenterProtocol {
     
     func model(for indexPath: IndexPath) -> StockModelProtocol {
         favoriteStocks[indexPath.row]
+    }
+}
+
+extension StockFavoritesPresenter: FavoritesUpdateServiceProtocol {
+    func setFavorite(notification: Notification) {
+        loadView()
     }
 }
