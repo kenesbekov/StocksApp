@@ -19,16 +19,3 @@ extension FavoritesUpdateServiceProtocol {
                                                object: nil)
     }
 }
-
-extension NSNotification.Name {
-    static let favorites = NSNotification.Name("Update.Favorite.Stocks")
-}
-
-extension Notification {
-    var stockID: String? {
-        guard let userInfo = userInfo,
-              let id = userInfo["id"] as? String else { return nil }
-        
-        return id
-    }
-}

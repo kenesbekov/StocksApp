@@ -14,14 +14,14 @@ protocol StocksServiceProtocol {
 }
 
 final class StocksService: StocksServiceProtocol {
-    private let client: NetworkService
+    private let network: NetworkService
     
-    init(client: NetworkService) {
-        self.client = client
+    init(network: NetworkService) {
+        self.network = network
     }
     
     func getStocks(currency: String, count: String, completion: @escaping (Result<[Stock], NetworkError>) -> Void) {
-        client.execute(with: StocksRouter.stocks(currency: currency, count: count), completion: completion)
+        network.execute(with: StocksRouter.stocks(currency: currency, count: count), completion: completion)
     }
 }
 

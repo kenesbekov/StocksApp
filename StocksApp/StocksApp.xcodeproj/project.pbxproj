@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		001028142859C69800EB7F46 /* StockFavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001028132859C69800EB7F46 /* StockFavoritesViewController.swift */; };
+		001028172859C73600EB7F46 /* StockFavoritesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001028162859C73500EB7F46 /* StockFavoritesPresenter.swift */; };
 		002224C128530A3C0058858E /* StocksPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002224C028530A3C0058858E /* StocksPresenter.swift */; };
 		002224C4285311FB0058858E /* NSObject+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002224C3285311FB0058858E /* NSObject+Ext.swift */; };
 		002224C6285312220058858E /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002224C5285312220058858E /* UIImageView+Ext.swift */; };
@@ -27,7 +29,7 @@
 		006796302852049A00B442F9 /* StockDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0067962F2852049A00B442F9 /* StockDetailViewController.swift */; };
 		006796322852056000B442F9 /* StockDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006796312852056000B442F9 /* StockDetailView.swift */; };
 		00679635285226F400B442F9 /* DetailTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00679634285226F400B442F9 /* DetailTitleView.swift */; };
-		0067963C285236E500B442F9 /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0067963B285236E500B442F9 /* ModuleBuilder.swift */; };
+		0067963C285236E500B442F9 /* Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0067963B285236E500B442F9 /* Assembly.swift */; };
 		00A8E0962850B681007B0913 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A8E0952850B681007B0913 /* AppDelegate.swift */; };
 		00A8E09A2850B681007B0913 /* StocksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A8E0992850B681007B0913 /* StocksViewController.swift */; };
 		00A8E09F2850B683007B0913 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00A8E09E2850B683007B0913 /* Assets.xcassets */; };
@@ -36,9 +38,12 @@
 		00D1FCC928546B6E0054B61C /* UserDefaultsFavoritesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D1FCC828546B6E0054B61C /* UserDefaultsFavoritesService.swift */; };
 		00D1FCCB28546B7F0054B61C /* FileManagerFavoritesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D1FCCA28546B7F0054B61C /* FileManagerFavoritesService.swift */; };
 		00D1FCCD28547CD20054B61C /* FavoritesUpdateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D1FCCC28547CD20054B61C /* FavoritesUpdateService.swift */; };
+		00D1FCCF2854933D0054B61C /* NSNotification+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D1FCCE2854933D0054B61C /* NSNotification+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		001028132859C69800EB7F46 /* StockFavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockFavoritesViewController.swift; sourceTree = "<group>"; };
+		001028162859C73500EB7F46 /* StockFavoritesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockFavoritesPresenter.swift; sourceTree = "<group>"; };
 		002224C028530A3C0058858E /* StocksPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksPresenter.swift; sourceTree = "<group>"; };
 		002224C3285311FB0058858E /* NSObject+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Ext.swift"; sourceTree = "<group>"; };
 		002224C5285312220058858E /* UIImageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ext.swift"; sourceTree = "<group>"; };
@@ -59,7 +64,7 @@
 		0067962F2852049A00B442F9 /* StockDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDetailViewController.swift; sourceTree = "<group>"; };
 		006796312852056000B442F9 /* StockDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDetailView.swift; sourceTree = "<group>"; };
 		00679634285226F400B442F9 /* DetailTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTitleView.swift; sourceTree = "<group>"; };
-		0067963B285236E500B442F9 /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
+		0067963B285236E500B442F9 /* Assembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembly.swift; sourceTree = "<group>"; };
 		00A8E0922850B681007B0913 /* StocksApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StocksApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00A8E0952850B681007B0913 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00A8E0992850B681007B0913 /* StocksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksViewController.swift; sourceTree = "<group>"; };
@@ -70,6 +75,7 @@
 		00D1FCC828546B6E0054B61C /* UserDefaultsFavoritesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsFavoritesService.swift; sourceTree = "<group>"; };
 		00D1FCCA28546B7F0054B61C /* FileManagerFavoritesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerFavoritesService.swift; sourceTree = "<group>"; };
 		00D1FCCC28547CD20054B61C /* FavoritesUpdateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesUpdateService.swift; sourceTree = "<group>"; };
+		00D1FCCE2854933D0054B61C /* NSNotification+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNotification+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,11 +89,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		001028152859C6BC00EB7F46 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				001028162859C73500EB7F46 /* StockFavoritesPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		002224C2285311CC0058858E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				002224C3285311FB0058858E /* NSObject+Ext.swift */,
 				002224C5285312220058858E /* UIImageView+Ext.swift */,
+				00D1FCCE2854933D0054B61C /* NSNotification+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -104,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				0067963328521EEC00B442F9 /* StockDetailScreen */,
+				00D1FCD22854A77F0054B61C /* StockFavoritesScreen */,
 				0067963628522BBE00B442F9 /* StocksListScreen */,
 			);
 			path = StocksScreen;
@@ -251,9 +267,9 @@
 		0067963F285242D400B442F9 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				0067963B285236E500B442F9 /* Assembly.swift */,
 				002224C2285311CC0058858E /* Extensions */,
 				006796212851C1B300B442F9 /* Services */,
-				0067963B285236E500B442F9 /* ModuleBuilder.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -294,6 +310,23 @@
 				00D1FCCC28547CD20054B61C /* FavoritesUpdateService.swift */,
 			);
 			path = FavoritesService;
+			sourceTree = "<group>";
+		};
+		00D1FCD22854A77F0054B61C /* StockFavoritesScreen */ = {
+			isa = PBXGroup;
+			children = (
+				001028152859C6BC00EB7F46 /* Presenter */,
+				00D1FCD52854A7970054B61C /* View */,
+			);
+			path = StockFavoritesScreen;
+			sourceTree = "<group>";
+		};
+		00D1FCD52854A7970054B61C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				001028132859C69800EB7F46 /* StockFavoritesViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -372,10 +405,12 @@
 				00A8E09A2850B681007B0913 /* StocksViewController.swift in Sources */,
 				006796292851C85600B442F9 /* HTTPMethod.swift in Sources */,
 				00D1FCC928546B6E0054B61C /* UserDefaultsFavoritesService.swift in Sources */,
-				0067963C285236E500B442F9 /* ModuleBuilder.swift in Sources */,
+				001028142859C69800EB7F46 /* StockFavoritesViewController.swift in Sources */,
+				0067963C285236E500B442F9 /* Assembly.swift in Sources */,
 				002224C128530A3C0058858E /* StocksPresenter.swift in Sources */,
 				002224C8285312960058858E /* StocksRouter.swift in Sources */,
 				00D1FCCB28546B7F0054B61C /* FileManagerFavoritesService.swift in Sources */,
+				001028172859C73600EB7F46 /* StockFavoritesPresenter.swift in Sources */,
 				00A8E0962850B681007B0913 /* AppDelegate.swift in Sources */,
 				002224C6285312220058858E /* UIImageView+Ext.swift in Sources */,
 				00D1FCCD28547CD20054B61C /* FavoritesUpdateService.swift in Sources */,
@@ -390,6 +425,7 @@
 				002224C4285311FB0058858E /* NSObject+Ext.swift in Sources */,
 				0067962E2851CBC600B442F9 /* StocksService.swift in Sources */,
 				0067962B2851C9B400B442F9 /* NetworkService.swift in Sources */,
+				00D1FCCF2854933D0054B61C /* NSNotification+Ext.swift in Sources */,
 				00D1FCC72854624C0054B61C /* FavoritesService.swift in Sources */,
 				002224DD2853691E0058858E /* ChartsResponse.swift in Sources */,
 				002224DB2853671E0058858E /* ChartsView.swift in Sources */,

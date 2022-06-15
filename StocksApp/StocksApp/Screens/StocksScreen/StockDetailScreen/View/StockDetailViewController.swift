@@ -14,6 +14,8 @@ final class StockDetailViewController: UIViewController {
         self.presenter = presenter
         
         super.init(nibName: nil, bundle: nil)
+        
+        hidesBottomBarWhenPushed = true
     }
     
     required init?(coder: NSCoder) {

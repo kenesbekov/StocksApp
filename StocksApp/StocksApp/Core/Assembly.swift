@@ -1,5 +1,5 @@
 //
-//  Tabbar.swift
+//  Assembly.swift
 //  StocksApp
 //
 //  Created by Abdurahim on 09.06.2022.
@@ -8,15 +8,15 @@
 import Foundation
 import UIKit
 
-final class ModuleBuilder {
+final class Assembly {
+    static let assembler: Assembly = .init()
     let favoritesService: FavoritesServiceProtocol = FavoritesLocalService()
-    static let shared: ModuleBuilder = .init()
     
     private init() {}
     
     private lazy var network: NetworkService = Network()
-    private lazy var stocksService: StocksServiceProtocol = StocksService(client: network)
-    private lazy var chartsService: ChartsServiceProtocol = ChartsService(client: network)
+    private lazy var stocksService: StocksServiceProtocol = StocksService(network: network)
+    private lazy var chartsService: ChartsServiceProtocol = ChartsService(network: network)
     
     private func stocksModule() -> UIViewController {
         let presenter = StocksPresenter(service: stocksService)
@@ -34,14 +34,21 @@ final class ModuleBuilder {
         return view
     }
     
+    public func favoritesModule() -> UIViewController {
+        let presenter = StockFavoritesPresenter(service: stocksService)
+        let view = StockFavoritesViewController(presenter: presenter)
+        presenter.view = view
+        
+        return view
+    }
+    
     public func tabbarController() -> UIViewController {
         let tabbar = UITabBarController()
         
         let firstVC = UINavigationController(rootViewController: stocksModule())
         firstVC.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "stocks-bar"), tag: 0)
         
-        let secondVC = UIViewController()
-        secondVC.view.backgroundColor = .white
+        let secondVC = UINavigationController(rootViewController: favoritesModule())
         secondVC.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "favorites-bar"), tag: 1)
         
         let thirdVC = UIViewController()

@@ -13,14 +13,14 @@ protocol ChartsServiceProtocol {
 }
 
 final class ChartsService: ChartsServiceProtocol {
-    private let client: NetworkService
+    private let network: NetworkService
     
-    init(client: NetworkService) {
-        self.client = client
+    init(network: NetworkService) {
+        self.network = network
     }
     
     func getCharts(id: String, currency: String, days: Int, interval: String, completion: @escaping (Result<Charts, NetworkError>) -> Void) {
-        client.execute(with: StocksRouter.charts(id: id, currency: currency, days: days, interval: interval), completion: completion)
+        network.execute(with: StocksRouter.charts(id: id, currency: currency, days: days, interval: interval), completion: completion)
     }
 }
 

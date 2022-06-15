@@ -1,16 +1,16 @@
 //
-//  StocksViewController.swift
+//  StockFavoritesViewController.swift
 //  StocksApp
 //
-//  Created by Abdurahim on 08.06.2022.
+//  Created by Abdurahim on 11.06.2022.
 //
 
 import UIKit
 
-final class StocksViewController: UIViewController {
-    private let presenter: StocksPresenterProtocol
+final class StockFavoritesViewController: UIViewController {
+    private let presenter: StockFavoritesPresenterProtocol
     
-    internal init(presenter: StocksPresenterProtocol) {
+    internal init(presenter: StockFavoritesPresenterProtocol) {
         self.presenter = presenter
         
         super.init(nibName: nil, bundle: nil)
@@ -51,7 +51,7 @@ final class StocksViewController: UIViewController {
     }
     
     private func setupNavigationBar() {
-        navigationItem.title = "Stocks"
+        navigationItem.title = "Favorites"
         navigationItem.largeTitleDisplayMode = .always
         navigationController?.navigationBar.prefersLargeTitles = true
     }
@@ -69,29 +69,12 @@ final class StocksViewController: UIViewController {
     }
 }
 
-final class MockStocksService: StocksServiceProtocol {
-    func getStocks(currency: String, count: String, completion: @escaping (Result<[Stock], NetworkError>) -> Void) {
-        let stocks = [
-            Stock(id: "", symbol: "", name: "", image: URL(string: "")!, currentPrice: 0, priceChange: 0, priceChangePercentage: 0),
-            Stock(id: "", symbol: "", name: "", image: URL(string: "")!, currentPrice: 0, priceChange: 0, priceChangePercentage: 0),
-            Stock(id: "", symbol: "", name: "", image: URL(string: "")!, currentPrice: 0, priceChange: 0, priceChangePercentage: 0),
-            Stock(id: "", symbol: "", name: "", image: URL(string: "")!, currentPrice: 0, priceChange: 0, priceChangePercentage: 0),
-            Stock(id: "", symbol: "", name: "", image: URL(string: "")!, currentPrice: 0, priceChange: 0, priceChangePercentage: 0),
-            Stock(id: "", symbol: "", name: "", image: URL(string: "")!, currentPrice: 0, priceChange: 0, priceChangePercentage: 0),
-            Stock(id: "", symbol: "", name: "", image: URL(string: "")!, currentPrice: 0, priceChange: 0, priceChangePercentage: 0),
-            Stock(id: "", symbol: "", name: "", image: URL(string: "")!, currentPrice: 0, priceChange: 0, priceChangePercentage: 0)
-        ]
-        
-        completion(.success(stocks))
-    }
-}
-
-extension StocksViewController: StocksViewProtocol {
+extension StockFavoritesViewController: StockFavoritesViewProtocol {
     func updateView() {
         tableView.reloadData()
     }
     
-    func updateCell(for indexPath: IndexPath) {
+    func updateCell(for indexPath: IndexPath, isFavorite: Bool) {
         tableView.reloadRows(at: [indexPath], with: .none)
     }
     
@@ -104,7 +87,7 @@ extension StocksViewController: StocksViewProtocol {
     }
 }
 
-extension StocksViewController: UITableViewDataSource {
+extension StockFavoritesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: StockCell.typeName, for: indexPath) as! StockCell
         cell.selectionStyle = .none
@@ -122,13 +105,14 @@ extension StocksViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        presenter.itemsCount
+        presenter.favoritesCount
     }
 }
 
-extension StocksViewController: UITableViewDelegate {
+extension StockFavoritesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let stockDetailVC = Assembly.assembler.detailModule(model: presenter.model(for: indexPath))
         navigationController?.pushViewController(stockDetailVC, animated: true)
     }
 }
+
