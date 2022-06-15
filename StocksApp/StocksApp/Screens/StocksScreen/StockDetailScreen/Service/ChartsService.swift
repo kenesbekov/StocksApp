@@ -8,7 +8,7 @@
 import Foundation
 
 protocol ChartsServiceProtocol {
-    func getCharts(id: String, currency: String, days: Int, interval: String, completion: @escaping (Result<Charts, NetworkError>) -> Void)
+    func getCharts(id: String, currency: String, days: Int, isDaily: Bool, completion: @escaping (Result<Charts, NetworkError>) -> Void)
     func getCharts(id: String, completion: @escaping (Result<Charts, NetworkError>) -> Void)
 }
 
@@ -19,13 +19,13 @@ final class ChartsService: ChartsServiceProtocol {
         self.network = network
     }
     
-    func getCharts(id: String, currency: String, days: Int, interval: String, completion: @escaping (Result<Charts, NetworkError>) -> Void) {
-        network.execute(with: StocksRouter.charts(id: id, currency: currency, days: days, interval: interval), completion: completion)
+    func getCharts(id: String, currency: String, days: Int, isDaily: Bool, completion: @escaping (Result<Charts, NetworkError>) -> Void) {
+        network.execute(with: StocksRouter.charts(id: id, currency: currency, days: days, isDaily: isDaily), completion: completion)
     }
 }
 
 extension ChartsServiceProtocol {
     func getCharts(id: String, completion: @escaping (Result<Charts, NetworkError>) -> Void) {
-        getCharts(id: id, currency: "usd", days: 60, interval: "daily", completion: completion)
+        getCharts(id: id, currency: "usd", days: 60, isDaily: true, completion: completion)
     }
 }

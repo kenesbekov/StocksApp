@@ -9,7 +9,7 @@ import Foundation
 
 enum StocksRouter: Router {
     case stocks(currency: String, count: String)
-    case charts(id: String, currency: String, days: Int, interval: String)
+    case charts(id: String, currency: String, days: Int, isDaily: Bool)
     
     var baseUrl: String {
         return "https://api.coingecko.com"
@@ -35,8 +35,8 @@ enum StocksRouter: Router {
         switch self {
         case .stocks(let currency, let count):
             return ["vs_currency": currency, "per_page": count]
-        case let .charts(_, currency, days, interval):
-            return ["vs_currency": currency, "days": days, "interval": interval]
+        case let .charts(_, currency, days, isDaily):
+            return ["vs_currency": currency, "days": days, "interval": isDaily ? "daily" : ""]
         }
     }
 }

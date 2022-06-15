@@ -34,6 +34,7 @@
 		00A8E09A2850B681007B0913 /* StocksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A8E0992850B681007B0913 /* StocksViewController.swift */; };
 		00A8E09F2850B683007B0913 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00A8E09E2850B683007B0913 /* Assets.xcassets */; };
 		00A8E0A22850B683007B0913 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00A8E0A02850B683007B0913 /* LaunchScreen.storyboard */; };
+		00AEA83E2859E55200AB079D /* Array+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AEA83D2859E55200AB079D /* Array+Ext.swift */; };
 		00D1FCC72854624C0054B61C /* FavoritesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D1FCC62854624C0054B61C /* FavoritesService.swift */; };
 		00D1FCC928546B6E0054B61C /* UserDefaultsFavoritesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D1FCC828546B6E0054B61C /* UserDefaultsFavoritesService.swift */; };
 		00D1FCCB28546B7F0054B61C /* FileManagerFavoritesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D1FCCA28546B7F0054B61C /* FileManagerFavoritesService.swift */; };
@@ -71,6 +72,7 @@
 		00A8E09E2850B683007B0913 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		00A8E0A12850B683007B0913 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		00A8E0A32850B683007B0913 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00AEA83D2859E55200AB079D /* Array+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Ext.swift"; sourceTree = "<group>"; };
 		00D1FCC62854624C0054B61C /* FavoritesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesService.swift; sourceTree = "<group>"; };
 		00D1FCC828546B6E0054B61C /* UserDefaultsFavoritesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsFavoritesService.swift; sourceTree = "<group>"; };
 		00D1FCCA28546B7F0054B61C /* FileManagerFavoritesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerFavoritesService.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				002224C3285311FB0058858E /* NSObject+Ext.swift */,
 				002224C5285312220058858E /* UIImageView+Ext.swift */,
 				00D1FCCE2854933D0054B61C /* NSNotification+Ext.swift */,
+				00AEA83D2859E55200AB079D /* Array+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -418,6 +421,7 @@
 				002224CA285313000058858E /* StockModel.swift in Sources */,
 				002224D928534ABA0058858E /* ChartsService.swift in Sources */,
 				006796192850C9E200B442F9 /* StockCell.swift in Sources */,
+				00AEA83E2859E55200AB079D /* Array+Ext.swift in Sources */,
 				00679635285226F400B442F9 /* DetailTitleView.swift in Sources */,
 				006796272851C82400B442F9 /* NetworkError.swift in Sources */,
 				006796322852056000B442F9 /* StockDetailView.swift in Sources */,
