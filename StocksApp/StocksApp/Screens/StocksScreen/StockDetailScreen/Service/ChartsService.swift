@@ -26,6 +26,7 @@ final class ChartsService: ChartsServiceProtocol {
 
 extension ChartsServiceProtocol {
     func getCharts(id: String, completion: @escaping (Result<Charts, NetworkError>) -> Void) {
-        getCharts(id: id, currency: "usd", days: 7, isDaily: true, completion: completion)
+        let allDays = Calendar.numberOfDaysBetween(from: Calendar.firstCryptoDay, to: .now)
+        getCharts(id: id, currency: "usd", days: allDays, isDaily: true, completion: completion)
     }
 }

@@ -11,12 +11,17 @@ import Charts
 
 final class ChartsContainterView: UIView {
     private var chartsModel: ChartsModel?
+    private var buttons: [UIButton] = []
     
     private lazy var chartsView: LineChartView = {
         let chartView = LineChartView()
         chartView.translatesAutoresizingMaskIntoConstraints = false
         
-        chartView.xAxis.enabled = false
+        chartView.xAxis.enabled = true
+        chartView.xAxis.labelPosition = .bottom
+        chartView.xAxis.drawGridLinesEnabled = false
+        chartView.xAxis.axisLineColor = .clear
+        
         chartView.leftAxis.enabled = false
         chartView.rightAxis.enabled = false
         
@@ -107,10 +112,11 @@ final class ChartsContainterView: UIView {
             button.setTitleColor(period.name == "W" ? .white : .black, for: .normal)
             
             buttonsStackView.addArrangedSubview(button)
+            buttons.append(button)
         }
     }
     
-    private func setCharts(with period: ChartsModel.Period?) {
+    private func setCharts(with period: ChartsPeriod?) {
         guard let period = period else { return }
         
         var yValues = [ChartDataEntry]()
@@ -146,9 +152,24 @@ final class ChartsContainterView: UIView {
     
     @objc
     private func periodButtonTapped(_ sender: UIButton!) {
-        buttonsStackView.subviews.compactMap { $0 as? UIButton }.forEach {
+        buttons.forEach {
             $0.backgroundColor = sender.tag == $0.tag ? .black : UIColor(red: 240/255, green: 244/255, blue: 247/255, alpha: 1)
             $0.setTitleColor(sender.tag == $0.tag ? .white : .black, for: .normal)
+        }
+        
+        switch sender.tag {
+        case 0:
+            setCharts(with: chartsModel?.periods[0])
+        case 1:
+            setCharts(with: chartsModel?.periods[1])
+        case 2:
+            setCharts(with: chartsModel?.periods[2])
+        case 3:
+            setCharts(with: chartsModel?.periods[3])
+        case 4:
+            setCharts(with: chartsModel?.periods[4])
+        default:
+            break
         }
     }
 }

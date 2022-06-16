@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		00086229285AFE7700219BA8 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 00086228285AFE7700219BA8 /* Charts */; };
 		0008622B285AFEEB00219BA8 /* ChartsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0008622A285AFEEB00219BA8 /* ChartsModel.swift */; };
+		0008622D285B41AA00219BA8 /* Calendar+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0008622C285B41AA00219BA8 /* Calendar+Ext.swift */; };
 		001028142859C69800EB7F46 /* StockFavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001028132859C69800EB7F46 /* StockFavoritesViewController.swift */; };
 		001028172859C73600EB7F46 /* StockFavoritesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001028162859C73500EB7F46 /* StockFavoritesPresenter.swift */; };
 		002224C128530A3C0058858E /* StocksPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002224C028530A3C0058858E /* StocksPresenter.swift */; };
@@ -46,6 +47,7 @@
 
 /* Begin PBXFileReference section */
 		0008622A285AFEEB00219BA8 /* ChartsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsModel.swift; sourceTree = "<group>"; };
+		0008622C285B41AA00219BA8 /* Calendar+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calendar+Ext.swift"; sourceTree = "<group>"; };
 		001028132859C69800EB7F46 /* StockFavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockFavoritesViewController.swift; sourceTree = "<group>"; };
 		001028162859C73500EB7F46 /* StockFavoritesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockFavoritesPresenter.swift; sourceTree = "<group>"; };
 		002224C028530A3C0058858E /* StocksPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksPresenter.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				002224C5285312220058858E /* UIImageView+Ext.swift */,
 				00D1FCCE2854933D0054B61C /* NSNotification+Ext.swift */,
 				00AEA83D2859E55200AB079D /* Array+Ext.swift */,
+				0008622C285B41AA00219BA8 /* Calendar+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -444,6 +447,7 @@
 				00D1FCCF2854933D0054B61C /* NSNotification+Ext.swift in Sources */,
 				00D1FCC72854624C0054B61C /* FavoritesService.swift in Sources */,
 				002224DD2853691E0058858E /* ChartsResponse.swift in Sources */,
+				0008622D285B41AA00219BA8 /* Calendar+Ext.swift in Sources */,
 				002224DB2853671E0058858E /* ChartsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

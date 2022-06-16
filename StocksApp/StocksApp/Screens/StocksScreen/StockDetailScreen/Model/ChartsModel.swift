@@ -7,18 +7,27 @@
 
 import Foundation
 
-struct ChartsModel {
-    let periods: [Period]
+protocol ChartsModelProtocol {
+    var periods: [ChartsPeriod] { get }
     
-    struct Period {
-        let name: String
-        let prices: [Double]
-    }
+    static func build(from charts: Charts) -> ChartsModel
+}
+
+struct ChartsModel: ChartsModelProtocol {
+    var periods: [ChartsPeriod]
     
     static func build(from charts: Charts) -> ChartsModel {
-        return ChartsModel(periods: [Period(name: "W", prices: charts.prices.map { $0.price }),
-                                     Period(name: "M", prices: []),
-                                     Period(name: "6M", prices: []),
-                                     Period(name: "1Y", prices: [])])
+        let period = charts.prices.map { $0.price }
+        
+        return ChartsModel(periods: [ChartsPeriod(name: "W", prices: period.suffix(7)),
+                                     ChartsPeriod(name: "M", prices: period.suffix(30)),
+                                     ChartsPeriod(name: "6M", prices: period.suffix(180)),
+                                     ChartsPeriod(name: "1Y", prices: period.suffix(365)),
+                                     ChartsPeriod(name: "ALL", prices: period)])
     }
+}
+
+struct ChartsPeriod {
+    let name: String
+    let prices: [Double]
 }
