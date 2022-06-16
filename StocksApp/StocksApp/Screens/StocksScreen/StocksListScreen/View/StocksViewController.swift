@@ -69,23 +69,6 @@ final class StocksViewController: UIViewController {
     }
 }
 
-final class MockStocksService: StocksServiceProtocol {
-    func getStocks(currency: String, count: String, completion: @escaping (Result<[Stock], NetworkError>) -> Void) {
-        let stocks = [
-            Stock(id: "", symbol: "", name: "", image: URL(string: "")!, currentPrice: 0, priceChange: 0, priceChangePercentage: 0),
-            Stock(id: "", symbol: "", name: "", image: URL(string: "")!, currentPrice: 0, priceChange: 0, priceChangePercentage: 0),
-            Stock(id: "", symbol: "", name: "", image: URL(string: "")!, currentPrice: 0, priceChange: 0, priceChangePercentage: 0),
-            Stock(id: "", symbol: "", name: "", image: URL(string: "")!, currentPrice: 0, priceChange: 0, priceChangePercentage: 0),
-            Stock(id: "", symbol: "", name: "", image: URL(string: "")!, currentPrice: 0, priceChange: 0, priceChangePercentage: 0),
-            Stock(id: "", symbol: "", name: "", image: URL(string: "")!, currentPrice: 0, priceChange: 0, priceChangePercentage: 0),
-            Stock(id: "", symbol: "", name: "", image: URL(string: "")!, currentPrice: 0, priceChange: 0, priceChangePercentage: 0),
-            Stock(id: "", symbol: "", name: "", image: URL(string: "")!, currentPrice: 0, priceChange: 0, priceChangePercentage: 0)
-        ]
-        
-        completion(.success(stocks))
-    }
-}
-
 extension StocksViewController: StocksViewProtocol {
     func updateView() {
         tableView.reloadData()

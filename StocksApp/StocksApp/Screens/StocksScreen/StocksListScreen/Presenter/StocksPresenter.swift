@@ -45,7 +45,7 @@ final class StocksPresenter: StocksPresenterProtocol {
             
             switch result {
             case .success(let stocks):
-                self?.stocks = stocks.map { StockModel(stock: $0) }
+                self?.stocks = stocks
                 self?.view?.updateView()
             case .failure(let error):
                 self?.view?.updateView(withError: error.localizedDescription)
@@ -63,16 +63,6 @@ extension StocksPresenter: FavoritesUpdateServiceProtocol {
         guard let id = notification.stockID,
               let index = stocks.firstIndex(where: { $0.id == id }) else { return }
         
-        service.getStocks { [weak self] result in
-            self?.view?.updateView(withLoader: false)
-            
-            switch result {
-            case .success(let stocks):
-                self?.stocks = stocks.map { StockModel(stock: $0) }
-                self?.view?.updateCell(for: IndexPath(row: index, section: 0))
-            case .failure(let error):
-                self?.view?.updateView(withError: error.localizedDescription)
-            }
-        }
+        view?.updateCell(for: IndexPath(row: index, section: 0))
     }
 }

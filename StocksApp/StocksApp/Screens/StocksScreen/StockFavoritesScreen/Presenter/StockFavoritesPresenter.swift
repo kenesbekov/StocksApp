@@ -44,8 +44,8 @@ final class StockFavoritesPresenter: StockFavoritesPresenterProtocol {
             self?.view?.updateView(withLoader: false)
             
             switch result {
-            case .success(let favoriteStocks):
-                self?.favoriteStocks = favoriteStocks.map { StockModel(stock: $0) }.filter { $0.isFavorite }
+            case .success(let stocks):
+                self?.favoriteStocks = stocks.filter { $0.isFavorite }
                 self?.view?.updateView()
             case .failure(let error):
                 self?.view?.updateView(withError: error.localizedDescription)

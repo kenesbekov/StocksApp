@@ -5,6 +5,12 @@
 //  Created by Abdurahim on 10.06.2022.
 //
 
+fileprivate enum Constants {
+    static let currency = "usd"
+    static let isDaily = true
+    static let days = Calendar.numberOfDaysBetween(from: Calendar.firstCryptoDay, to: .now)
+}
+
 import Foundation
 
 protocol ChartsServiceProtocol {
@@ -26,7 +32,6 @@ final class ChartsService: ChartsServiceProtocol {
 
 extension ChartsServiceProtocol {
     func getCharts(id: String, completion: @escaping (Result<Charts, NetworkError>) -> Void) {
-        let allDays = Calendar.numberOfDaysBetween(from: Calendar.firstCryptoDay, to: .now)
-        getCharts(id: id, currency: "usd", days: allDays, isDaily: true, completion: completion)
+        getCharts(id: id, currency: Constants.currency, days: Constants.days, isDaily: Constants.isDaily, completion: completion)
     }
 }

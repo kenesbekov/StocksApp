@@ -60,12 +60,3 @@ final class Assembly {
         return tabbar
     }
 }
-
-class MockService: StocksServiceProtocol {
-    func getStocks(currency: String, count: String, completion: @escaping (Result<[Stock], NetworkError>) -> Void) {
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            completion(.failure(.taskError))
-        }
-    }
-}
