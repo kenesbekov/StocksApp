@@ -28,12 +28,18 @@ final class StockDetailViewController: UIViewController {
         return view
     }()
     
-    private lazy var stockDetailView = StockDetailView(frame: CGRect(
-        x: 0,
-        y: 0,
-        width: UIScreen.main.bounds.width,
-        height: UIScreen.main.bounds.height
-    ))
+    private lazy var stockDetailView: UIView = {
+        let view = StockDetailView()
+        view.configure(with: presenter.getModel())
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    private lazy var chartsView: ChartsContainterView = {
+        let view = ChartsContainterView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
     
     private lazy var backButton: UIButton = {
         let button = UIButton(type: .custom)
@@ -90,15 +96,20 @@ final class StockDetailViewController: UIViewController {
     }
     
     private func setupViews() {
-        stockDetailView.configure(with: presenter.getModel())
         view.addSubview(stockDetailView)
+        view.addSubview(chartsView)
     }
     
     private func setupContraints() {
         stockDetailView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         stockDetailView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         stockDetailView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        stockDetailView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        stockDetailView.bottomAnchor.constraint(equalTo: chartsView.topAnchor, constant: -30).isActive = true
+        
+        chartsView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        chartsView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 150).isActive = true
+        chartsView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        chartsView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     }
 }
 
@@ -106,9 +117,12 @@ extension StockDetailViewController: StockDetailViewProtocol {
     func updateView() {
         
     }
+    func updateView(with model: ChartsModel) {
+        chartsView.configure(with: model)
+    }
     
     func updateView(withLoader isLoading: Bool) {
-        print("Loader is - ", isLoading, " at ", Date())
+        chartsView.configure(with: isLoading)
     }
     
     func updateView(withError message: String) {

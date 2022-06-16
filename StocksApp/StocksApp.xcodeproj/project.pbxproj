@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00086229285AFE7700219BA8 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 00086228285AFE7700219BA8 /* Charts */; };
+		0008622B285AFEEB00219BA8 /* ChartsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0008622A285AFEEB00219BA8 /* ChartsModel.swift */; };
 		001028142859C69800EB7F46 /* StockFavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001028132859C69800EB7F46 /* StockFavoritesViewController.swift */; };
 		001028172859C73600EB7F46 /* StockFavoritesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001028162859C73500EB7F46 /* StockFavoritesPresenter.swift */; };
 		002224C128530A3C0058858E /* StocksPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002224C028530A3C0058858E /* StocksPresenter.swift */; };
@@ -43,6 +45,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0008622A285AFEEB00219BA8 /* ChartsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsModel.swift; sourceTree = "<group>"; };
 		001028132859C69800EB7F46 /* StockFavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockFavoritesViewController.swift; sourceTree = "<group>"; };
 		001028162859C73500EB7F46 /* StockFavoritesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockFavoritesPresenter.swift; sourceTree = "<group>"; };
 		002224C028530A3C0058858E /* StocksPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksPresenter.swift; sourceTree = "<group>"; };
@@ -85,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00086229285AFE7700219BA8 /* Charts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,6 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				002224D428533ADE0058858E /* TitleModel.swift */,
+				0008622A285AFEEB00219BA8 /* ChartsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -348,6 +353,9 @@
 			dependencies = (
 			);
 			name = StocksApp;
+			packageProductDependencies = (
+				00086228285AFE7700219BA8 /* Charts */,
+			);
 			productName = StocksApp;
 			productReference = 00A8E0922850B681007B0913 /* StocksApp.app */;
 			productType = "com.apple.product-type.application";
@@ -376,6 +384,9 @@
 				Base,
 			);
 			mainGroup = 00A8E0892850B681007B0913;
+			packageReferences = (
+				00086227285AFE7700219BA8 /* XCRemoteSwiftPackageReference "Charts" */,
+			);
 			productRefGroup = 00A8E0932850B681007B0913 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -404,6 +415,7 @@
 			files = (
 				006796242851C62E00B442F9 /* Router.swift in Sources */,
 				002224CD2853136A0058858E /* StockResponse.swift in Sources */,
+				0008622B285AFEEB00219BA8 /* ChartsModel.swift in Sources */,
 				002224D328532F9A0058858E /* StockDetailPresenter.swift in Sources */,
 				00A8E09A2850B681007B0913 /* StocksViewController.swift in Sources */,
 				006796292851C85600B442F9 /* HTTPMethod.swift in Sources */,
@@ -640,6 +652,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		00086227285AFE7700219BA8 /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		00086228285AFE7700219BA8 /* Charts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 00086227285AFE7700219BA8 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = Charts;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 00A8E08A2850B681007B0913 /* Project object */;
 }
