@@ -142,7 +142,6 @@ final class ChartsContainterView: UIView {
         
         lineDataSet.drawHorizontalHighlightIndicatorEnabled = false
         lineDataSet.highlightColor = .black
-        lineDataSet.highlightLineDashPhase = 0.5
         
         let data = LineChartData(dataSet: lineDataSet)
         data.setDrawValues(false)
@@ -157,19 +156,6 @@ final class ChartsContainterView: UIView {
             $0.setTitleColor(sender.tag == $0.tag ? .white : .black, for: .normal)
         }
         
-        switch sender.tag {
-        case 0:
-            setCharts(with: chartsModel?.periods[0])
-        case 1:
-            setCharts(with: chartsModel?.periods[1])
-        case 2:
-            setCharts(with: chartsModel?.periods[2])
-        case 3:
-            setCharts(with: chartsModel?.periods[3])
-        case 4:
-            setCharts(with: chartsModel?.periods[4])
-        default:
-            break
-        }
+        setCharts(with: chartsModel?.periods[sender.tag])
     }
 }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 final class StockCell: UITableViewCell {
     private var favoriteAction: (() -> Void)?
@@ -84,7 +85,7 @@ final class StockCell: UITableViewCell {
     }
     
     public func configure(with model: StockModelProtocol) {
-        iconView.load(url: model.image)
+        iconView.setImage(from: model.image, placeholder: UIImage(named: "YNDX"))
         symbolLabel.text = model.symbol
         nameLabel.text = model.name
         currentPriceLabel.text = model.currentPrice
@@ -169,5 +170,52 @@ final class StockCell: UITableViewCell {
         priceChangeLabel.topAnchor.constraint(equalTo: currentPriceLabel.bottomAnchor).isActive = true
         priceChangeLabel.trailingAnchor.constraint(equalTo: priceContainterView.trailingAnchor).isActive = true
         priceChangeLabel.bottomAnchor.constraint(equalTo: priceContainterView.bottomAnchor).isActive = true
+    }
+    
+    // This is what does Kingfisher, but less. We don't use this method
+    private func loadImage(from url: URL) {
+        let iconTag = tag
+        // first method
+        iconView.image = nil
+        URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
+            guard let data = data else {
+                return
+            }
+
+            let image = UIImage(data: data)
+
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                if iconTag == self?.tag {
+                    self?.iconView.image = image
+                } else {
+                    print("Image download Error")
+                }
+            }
+        }.resume()
+        
+        
+        // built in method caching with configuration
+        let cache = URLCache(memoryCapacity: 50, diskCapacity: 50, diskPath: "stock_icons")
+        let configuration = URLSessionConfiguration.default
+        configuration.urlCache = cache
+        configuration.httpMaximumConnectionsPerHost = 5
+        
+        let session = URLSession(configuration: configuration)
+        
+        session.dataTask(with: url) { [weak self] data, _, _ in
+            guard let data = data else {
+                return
+            }
+
+            let image = UIImage(data: data)
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                if iconTag == self?.tag {
+                    self?.iconView.image = image
+                } else {
+                    print("Image download Error")
+                }
+            }
+        }.resume()
     }
 }
