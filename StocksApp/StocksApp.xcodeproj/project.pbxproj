@@ -7,23 +7,83 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00086229285AFE7700219BA8 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 00086228285AFE7700219BA8 /* Charts */; };
+		0008622B285AFEEB00219BA8 /* ChartsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0008622A285AFEEB00219BA8 /* ChartsModel.swift */; };
+		0008622D285B41AA00219BA8 /* Calendar+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0008622C285B41AA00219BA8 /* Calendar+Ext.swift */; };
+		00086230285C899800219BA8 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 0008622F285C899800219BA8 /* Kingfisher */; };
+		001028142859C69800EB7F46 /* StockFavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001028132859C69800EB7F46 /* StockFavoritesViewController.swift */; };
+		001028172859C73600EB7F46 /* StockFavoritesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001028162859C73500EB7F46 /* StockFavoritesPresenter.swift */; };
+		002224C128530A3C0058858E /* StocksPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002224C028530A3C0058858E /* StocksPresenter.swift */; };
+		002224C4285311FB0058858E /* NSObject+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002224C3285311FB0058858E /* NSObject+Ext.swift */; };
+		002224C6285312220058858E /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002224C5285312220058858E /* UIImageView+Ext.swift */; };
+		002224C8285312960058858E /* StocksRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002224C7285312960058858E /* StocksRouter.swift */; };
+		002224CA285313000058858E /* StockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002224C9285313000058858E /* StockModel.swift */; };
+		002224CD2853136A0058858E /* StockResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002224CC2853136A0058858E /* StockResponse.swift */; };
+		002224D328532F9A0058858E /* StockDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002224D228532F9A0058858E /* StockDetailPresenter.swift */; };
+		002224D528533ADE0058858E /* TitleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002224D428533ADE0058858E /* TitleModel.swift */; };
+		002224D928534ABA0058858E /* ChartsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002224D828534ABA0058858E /* ChartsService.swift */; };
+		002224DB2853671E0058858E /* ChartsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002224DA2853671E0058858E /* ChartsView.swift */; };
+		002224DD2853691E0058858E /* ChartsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002224DC2853691E0058858E /* ChartsResponse.swift */; };
+		006796192850C9E200B442F9 /* StockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006796182850C9E200B442F9 /* StockCell.swift */; };
+		006796242851C62E00B442F9 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006796232851C62E00B442F9 /* Router.swift */; };
+		006796272851C82400B442F9 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006796262851C82400B442F9 /* NetworkError.swift */; };
+		006796292851C85600B442F9 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006796282851C85600B442F9 /* HTTPMethod.swift */; };
+		0067962B2851C9B400B442F9 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0067962A2851C9B400B442F9 /* NetworkService.swift */; };
+		0067962E2851CBC600B442F9 /* StocksService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0067962D2851CBC600B442F9 /* StocksService.swift */; };
+		006796302852049A00B442F9 /* StockDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0067962F2852049A00B442F9 /* StockDetailViewController.swift */; };
+		006796322852056000B442F9 /* StockDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006796312852056000B442F9 /* StockDetailView.swift */; };
+		00679635285226F400B442F9 /* DetailTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00679634285226F400B442F9 /* DetailTitleView.swift */; };
+		0067963C285236E500B442F9 /* Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0067963B285236E500B442F9 /* Assembly.swift */; };
 		00A8E0962850B681007B0913 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A8E0952850B681007B0913 /* AppDelegate.swift */; };
-		00A8E0982850B681007B0913 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A8E0972850B681007B0913 /* SceneDelegate.swift */; };
-		00A8E09A2850B681007B0913 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A8E0992850B681007B0913 /* ViewController.swift */; };
-		00A8E09D2850B681007B0913 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00A8E09B2850B681007B0913 /* Main.storyboard */; };
+		00A8E09A2850B681007B0913 /* StocksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A8E0992850B681007B0913 /* StocksViewController.swift */; };
 		00A8E09F2850B683007B0913 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00A8E09E2850B683007B0913 /* Assets.xcassets */; };
 		00A8E0A22850B683007B0913 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00A8E0A02850B683007B0913 /* LaunchScreen.storyboard */; };
+		00AEA83E2859E55200AB079D /* Array+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AEA83D2859E55200AB079D /* Array+Ext.swift */; };
+		00D1FCC72854624C0054B61C /* FavoritesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D1FCC62854624C0054B61C /* FavoritesService.swift */; };
+		00D1FCC928546B6E0054B61C /* UserDefaultsFavoritesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D1FCC828546B6E0054B61C /* UserDefaultsFavoritesService.swift */; };
+		00D1FCCB28546B7F0054B61C /* FileManagerFavoritesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D1FCCA28546B7F0054B61C /* FileManagerFavoritesService.swift */; };
+		00D1FCCD28547CD20054B61C /* FavoritesUpdateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D1FCCC28547CD20054B61C /* FavoritesUpdateService.swift */; };
+		00D1FCCF2854933D0054B61C /* NSNotification+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D1FCCE2854933D0054B61C /* NSNotification+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0008622A285AFEEB00219BA8 /* ChartsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsModel.swift; sourceTree = "<group>"; };
+		0008622C285B41AA00219BA8 /* Calendar+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calendar+Ext.swift"; sourceTree = "<group>"; };
+		001028132859C69800EB7F46 /* StockFavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockFavoritesViewController.swift; sourceTree = "<group>"; };
+		001028162859C73500EB7F46 /* StockFavoritesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockFavoritesPresenter.swift; sourceTree = "<group>"; };
+		002224C028530A3C0058858E /* StocksPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksPresenter.swift; sourceTree = "<group>"; };
+		002224C3285311FB0058858E /* NSObject+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Ext.swift"; sourceTree = "<group>"; };
+		002224C5285312220058858E /* UIImageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ext.swift"; sourceTree = "<group>"; };
+		002224C7285312960058858E /* StocksRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksRouter.swift; sourceTree = "<group>"; };
+		002224C9285313000058858E /* StockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockModel.swift; sourceTree = "<group>"; };
+		002224CC2853136A0058858E /* StockResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockResponse.swift; sourceTree = "<group>"; };
+		002224D228532F9A0058858E /* StockDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDetailPresenter.swift; sourceTree = "<group>"; };
+		002224D428533ADE0058858E /* TitleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleModel.swift; sourceTree = "<group>"; };
+		002224D828534ABA0058858E /* ChartsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsService.swift; sourceTree = "<group>"; };
+		002224DA2853671E0058858E /* ChartsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsView.swift; sourceTree = "<group>"; };
+		002224DC2853691E0058858E /* ChartsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsResponse.swift; sourceTree = "<group>"; };
+		006796182850C9E200B442F9 /* StockCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockCell.swift; sourceTree = "<group>"; };
+		006796232851C62E00B442F9 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		006796262851C82400B442F9 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		006796282851C85600B442F9 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		0067962A2851C9B400B442F9 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		0067962D2851CBC600B442F9 /* StocksService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksService.swift; sourceTree = "<group>"; };
+		0067962F2852049A00B442F9 /* StockDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDetailViewController.swift; sourceTree = "<group>"; };
+		006796312852056000B442F9 /* StockDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDetailView.swift; sourceTree = "<group>"; };
+		00679634285226F400B442F9 /* DetailTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTitleView.swift; sourceTree = "<group>"; };
+		0067963B285236E500B442F9 /* Assembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembly.swift; sourceTree = "<group>"; };
 		00A8E0922850B681007B0913 /* StocksApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StocksApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00A8E0952850B681007B0913 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		00A8E0972850B681007B0913 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		00A8E0992850B681007B0913 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		00A8E09C2850B681007B0913 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		00A8E0992850B681007B0913 /* StocksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksViewController.swift; sourceTree = "<group>"; };
 		00A8E09E2850B683007B0913 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		00A8E0A12850B683007B0913 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		00A8E0A32850B683007B0913 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00AEA83D2859E55200AB079D /* Array+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Ext.swift"; sourceTree = "<group>"; };
+		00D1FCC62854624C0054B61C /* FavoritesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesService.swift; sourceTree = "<group>"; };
+		00D1FCC828546B6E0054B61C /* UserDefaultsFavoritesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsFavoritesService.swift; sourceTree = "<group>"; };
+		00D1FCCA28546B7F0054B61C /* FileManagerFavoritesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerFavoritesService.swift; sourceTree = "<group>"; };
+		00D1FCCC28547CD20054B61C /* FavoritesUpdateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesUpdateService.swift; sourceTree = "<group>"; };
+		00D1FCCE2854933D0054B61C /* NSNotification+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNotification+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,12 +91,202 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00086230285C899800219BA8 /* Kingfisher in Frameworks */,
+				00086229285AFE7700219BA8 /* Charts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		001028152859C6BC00EB7F46 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				001028162859C73500EB7F46 /* StockFavoritesPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		002224C2285311CC0058858E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				002224C3285311FB0058858E /* NSObject+Ext.swift */,
+				002224C5285312220058858E /* UIImageView+Ext.swift */,
+				00D1FCCE2854933D0054B61C /* NSNotification+Ext.swift */,
+				00AEA83D2859E55200AB079D /* Array+Ext.swift */,
+				0008622C285B41AA00219BA8 /* Calendar+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0067961A2851C10000B442F9 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				0067961B2851C12200B442F9 /* StocksScreen */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		0067961B2851C12200B442F9 /* StocksScreen */ = {
+			isa = PBXGroup;
+			children = (
+				0067963328521EEC00B442F9 /* StockDetailScreen */,
+				00D1FCD22854A77F0054B61C /* StockFavoritesScreen */,
+				0067963628522BBE00B442F9 /* StocksListScreen */,
+			);
+			path = StocksScreen;
+			sourceTree = "<group>";
+		};
+		0067961C2851C13100B442F9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				002224C9285313000058858E /* StockModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0067961D2851C13700B442F9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				00A8E0992850B681007B0913 /* StocksViewController.swift */,
+				0067961F2851C16200B442F9 /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0067961E2851C13C00B442F9 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				002224C028530A3C0058858E /* StocksPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		0067961F2851C16200B442F9 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				006796182850C9E200B442F9 /* StockCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		006796212851C1B300B442F9 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				00D1FCC5285462340054B61C /* FavoritesService */,
+				006796222851C1BA00B442F9 /* NetworkService */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		006796222851C1BA00B442F9 /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				006796282851C85600B442F9 /* HTTPMethod.swift */,
+				006796262851C82400B442F9 /* NetworkError.swift */,
+				0067962A2851C9B400B442F9 /* NetworkService.swift */,
+				006796232851C62E00B442F9 /* Router.swift */,
+			);
+			path = NetworkService;
+			sourceTree = "<group>";
+		};
+		0067962C2851CBAC00B442F9 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				002224CC2853136A0058858E /* StockResponse.swift */,
+				002224C7285312960058858E /* StocksRouter.swift */,
+				0067962D2851CBC600B442F9 /* StocksService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		0067963328521EEC00B442F9 /* StockDetailScreen */ = {
+			isa = PBXGroup;
+			children = (
+				0067963A28522C0B00B442F9 /* Model */,
+				0067963828522C0100B442F9 /* Presenter */,
+				0067963928522C0600B442F9 /* Service */,
+				0067963728522BFB00B442F9 /* View */,
+			);
+			path = StockDetailScreen;
+			sourceTree = "<group>";
+		};
+		0067963628522BBE00B442F9 /* StocksListScreen */ = {
+			isa = PBXGroup;
+			children = (
+				0067961C2851C13100B442F9 /* Model */,
+				0067961E2851C13C00B442F9 /* Presenter */,
+				0067962C2851CBAC00B442F9 /* Service */,
+				0067961D2851C13700B442F9 /* View */,
+			);
+			path = StocksListScreen;
+			sourceTree = "<group>";
+		};
+		0067963728522BFB00B442F9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				002224DA2853671E0058858E /* ChartsView.swift */,
+				00679634285226F400B442F9 /* DetailTitleView.swift */,
+				006796312852056000B442F9 /* StockDetailView.swift */,
+				0067962F2852049A00B442F9 /* StockDetailViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0067963828522C0100B442F9 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				002224D228532F9A0058858E /* StockDetailPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		0067963928522C0600B442F9 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				002224DC2853691E0058858E /* ChartsResponse.swift */,
+				002224D828534ABA0058858E /* ChartsService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		0067963A28522C0B00B442F9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				002224D428533ADE0058858E /* TitleModel.swift */,
+				0008622A285AFEEB00219BA8 /* ChartsModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0067963D2852426A00B442F9 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				00A8E0952850B681007B0913 /* AppDelegate.swift */,
+				00A8E0A02850B683007B0913 /* LaunchScreen.storyboard */,
+				00A8E0A32850B683007B0913 /* Info.plist */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		0067963E285242B100B442F9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				00A8E09E2850B683007B0913 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		0067963F285242D400B442F9 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				0067963B285236E500B442F9 /* Assembly.swift */,
+				002224C2285311CC0058858E /* Extensions */,
+				006796212851C1B300B442F9 /* Services */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
 		00A8E0892850B681007B0913 = {
 			isa = PBXGroup;
 			children = (
@@ -56,15 +306,40 @@
 		00A8E0942850B681007B0913 /* StocksApp */ = {
 			isa = PBXGroup;
 			children = (
-				00A8E0952850B681007B0913 /* AppDelegate.swift */,
-				00A8E0972850B681007B0913 /* SceneDelegate.swift */,
-				00A8E0992850B681007B0913 /* ViewController.swift */,
-				00A8E09B2850B681007B0913 /* Main.storyboard */,
-				00A8E09E2850B683007B0913 /* Assets.xcassets */,
-				00A8E0A02850B683007B0913 /* LaunchScreen.storyboard */,
-				00A8E0A32850B683007B0913 /* Info.plist */,
+				0067963D2852426A00B442F9 /* Application */,
+				0067963F285242D400B442F9 /* Core */,
+				0067963E285242B100B442F9 /* Resources */,
+				0067961A2851C10000B442F9 /* Screens */,
 			);
 			path = StocksApp;
+			sourceTree = "<group>";
+		};
+		00D1FCC5285462340054B61C /* FavoritesService */ = {
+			isa = PBXGroup;
+			children = (
+				00D1FCC62854624C0054B61C /* FavoritesService.swift */,
+				00D1FCCA28546B7F0054B61C /* FileManagerFavoritesService.swift */,
+				00D1FCC828546B6E0054B61C /* UserDefaultsFavoritesService.swift */,
+				00D1FCCC28547CD20054B61C /* FavoritesUpdateService.swift */,
+			);
+			path = FavoritesService;
+			sourceTree = "<group>";
+		};
+		00D1FCD22854A77F0054B61C /* StockFavoritesScreen */ = {
+			isa = PBXGroup;
+			children = (
+				001028152859C6BC00EB7F46 /* Presenter */,
+				00D1FCD52854A7970054B61C /* View */,
+			);
+			path = StockFavoritesScreen;
+			sourceTree = "<group>";
+		};
+		00D1FCD52854A7970054B61C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				001028132859C69800EB7F46 /* StockFavoritesViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +358,10 @@
 			dependencies = (
 			);
 			name = StocksApp;
+			packageProductDependencies = (
+				00086228285AFE7700219BA8 /* Charts */,
+				0008622F285C899800219BA8 /* Kingfisher */,
+			);
 			productName = StocksApp;
 			productReference = 00A8E0922850B681007B0913 /* StocksApp.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +390,10 @@
 				Base,
 			);
 			mainGroup = 00A8E0892850B681007B0913;
+			packageReferences = (
+				00086227285AFE7700219BA8 /* XCRemoteSwiftPackageReference "Charts" */,
+				0008622E285C899800219BA8 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 00A8E0932850B681007B0913 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -127,7 +410,6 @@
 			files = (
 				00A8E0A22850B683007B0913 /* LaunchScreen.storyboard in Resources */,
 				00A8E09F2850B683007B0913 /* Assets.xcassets in Resources */,
-				00A8E09D2850B681007B0913 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +420,45 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00A8E09A2850B681007B0913 /* ViewController.swift in Sources */,
+				006796242851C62E00B442F9 /* Router.swift in Sources */,
+				002224CD2853136A0058858E /* StockResponse.swift in Sources */,
+				0008622B285AFEEB00219BA8 /* ChartsModel.swift in Sources */,
+				002224D328532F9A0058858E /* StockDetailPresenter.swift in Sources */,
+				00A8E09A2850B681007B0913 /* StocksViewController.swift in Sources */,
+				006796292851C85600B442F9 /* HTTPMethod.swift in Sources */,
+				00D1FCC928546B6E0054B61C /* UserDefaultsFavoritesService.swift in Sources */,
+				001028142859C69800EB7F46 /* StockFavoritesViewController.swift in Sources */,
+				0067963C285236E500B442F9 /* Assembly.swift in Sources */,
+				002224C128530A3C0058858E /* StocksPresenter.swift in Sources */,
+				002224C8285312960058858E /* StocksRouter.swift in Sources */,
+				00D1FCCB28546B7F0054B61C /* FileManagerFavoritesService.swift in Sources */,
+				001028172859C73600EB7F46 /* StockFavoritesPresenter.swift in Sources */,
 				00A8E0962850B681007B0913 /* AppDelegate.swift in Sources */,
-				00A8E0982850B681007B0913 /* SceneDelegate.swift in Sources */,
+				002224C6285312220058858E /* UIImageView+Ext.swift in Sources */,
+				00D1FCCD28547CD20054B61C /* FavoritesUpdateService.swift in Sources */,
+				002224D528533ADE0058858E /* TitleModel.swift in Sources */,
+				002224CA285313000058858E /* StockModel.swift in Sources */,
+				002224D928534ABA0058858E /* ChartsService.swift in Sources */,
+				006796192850C9E200B442F9 /* StockCell.swift in Sources */,
+				00AEA83E2859E55200AB079D /* Array+Ext.swift in Sources */,
+				00679635285226F400B442F9 /* DetailTitleView.swift in Sources */,
+				006796272851C82400B442F9 /* NetworkError.swift in Sources */,
+				006796322852056000B442F9 /* StockDetailView.swift in Sources */,
+				006796302852049A00B442F9 /* StockDetailViewController.swift in Sources */,
+				002224C4285311FB0058858E /* NSObject+Ext.swift in Sources */,
+				0067962E2851CBC600B442F9 /* StocksService.swift in Sources */,
+				0067962B2851C9B400B442F9 /* NetworkService.swift in Sources */,
+				00D1FCCF2854933D0054B61C /* NSNotification+Ext.swift in Sources */,
+				00D1FCC72854624C0054B61C /* FavoritesService.swift in Sources */,
+				002224DD2853691E0058858E /* ChartsResponse.swift in Sources */,
+				0008622D285B41AA00219BA8 /* Calendar+Ext.swift in Sources */,
+				002224DB2853671E0058858E /* ChartsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		00A8E09B2850B681007B0913 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				00A8E09C2850B681007B0913 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		00A8E0A02850B683007B0913 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -289,10 +593,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7ZQ39JPT94;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = StocksApp/Info.plist;
+				INFOPLIST_FILE = StocksApp/Application/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -317,10 +620,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7ZQ39JPT94;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = StocksApp/Info.plist;
+				INFOPLIST_FILE = StocksApp/Application/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -358,6 +660,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		00086227285AFE7700219BA8 /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+		0008622E285C899800219BA8 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		00086228285AFE7700219BA8 /* Charts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 00086227285AFE7700219BA8 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = Charts;
+		};
+		0008622F285C899800219BA8 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0008622E285C899800219BA8 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 00A8E08A2850B681007B0913 /* Project object */;
 }
